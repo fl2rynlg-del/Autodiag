@@ -1,7 +1,7 @@
 /* AUTODIAG PRO — service worker
    Strategie: cache-first pentru fisierele aplicatiei (functioneaza offline),
    network-only pentru API-uri externe (datele trebuie sa fie la zi). */
-const CACHE = 'autodiag-v21';
+const CACHE = 'autodiag-v30';
 const ASSETS = [
   './',
   './index.html',

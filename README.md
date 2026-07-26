@@ -14,9 +14,9 @@ Toate datele sunt în fișier — aplicația funcționează și fără internet.
 | Coduri de eroare | 621 (P / B / C / U + specifice mărcilor), cu note din practică pe 68 dintre ele |
 | Motorizări | 1.180, pe 173 de modele și 32 de mărci, cu coduri de motor |
 | Ghiduri de diagnoză | 27, structurate: ordinea verificărilor → capcane → concluzie |
-| Referințe tehnice | 32 de secțiuni, peste 370 de intrări |
+| Referințe tehnice | 42 de secțiuni, 481 de intrări |
 | Diagrame de principiu | 12 (pinout OBD, releu, CAN, common-rail, EGR, răcire, frânare) |
-| Probleme cunoscute | 51, pe model și motorizare |
+| Probleme cunoscute | 52, pe model și motorizare |
 | Reguli de corelație DTC | 17 |
 | PID-uri OBD-II | 53, cu formulele din standard |
 
@@ -37,6 +37,9 @@ Toate datele sunt în fișier — aplicația funcționează și fără internet.
 | [NHTSA vPIC](https://vpic.nhtsa.dot.gov/api/) | domeniu public (SUA) | decodare VIN online |
 | [NHTSA Recalls](https://api.nhtsa.gov/) | domeniu public (SUA) | campanii de rechemare |
 | [OpenStreetMap](https://www.openstreetmap.org/) | ODbL | service în apropiere |
+| [NHTSA TSB](https://www.nhtsa.gov/recalls) | domeniu public (SUA) | buletine tehnice de service |
+| [TÜV Report](https://www.tuev-nord.de/en/knowledge/advice-and-tips-mobility/tuev-report/) | statistici publice | rate de defecte pe model |
+| [KBA](https://www.kba.de/) | date publice (Germania) | rechemări europene |
 | [EU Safety Gate](https://ec.europa.eu/rapex) | CC BY 4.0 | legătură pentru rechemări europene |
 
 Nu conține date copiate din baze comerciale (auto-data.net, ALLDATA, Autodata, HaynesPro, TecDoc).

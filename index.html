@@ -1914,15 +1914,21 @@ summary .m{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:#8494
 <div class="rr"><div class="k">56a / 56b</div><div class="v">Fază lungă / fază scurtă</div><div class="d">Standardul pentru circuitele de iluminat.</div></div>
 <div class="rr"><div class="k">49 / 49a</div><div class="v">Releu semnalizare</div><div class="d">49 = intrare, 49a = ieșire spre lămpi.</div></div>
 </div></details>
-<details data-s="green"><summary><span class="t">Coduri de culori pentru cabluri<span class="m">7 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
-<div class="q" style="margin:11px 13px">Convenția europeană uzuală. NU este garantată pe orice model — verifică întotdeauna cu multimetrul înainte de a tăia sau conecta un fir.</div>
-<div class="rr"><div class="k">Roșu</div><div class="v">Plus permanent (borna 30)</div><div class="d">Adesea cu secțiune mare. Se lucrează doar cu bateria deconectată.</div></div>
-<div class="rr"><div class="k">Maro</div><div class="v">Masă (borna 31)</div><div class="d">Convenția cea mai constantă între producători europeni.</div></div>
-<div class="rr"><div class="k">Negru</div><div class="v">Plus comutat (borna 15)</div><div class="d">Atenție: în convenția americană negrul este masă — exact invers.</div></div>
-<div class="rr"><div class="k">Galben-verde</div><div class="v">Masă de siguranță / airbag</div><div class="d">Conectorii galbeni indică circuite de airbag — nu se manipulează cu bateria conectată.</div></div>
-<div class="rr"><div class="k">Alb-negru / dungi</div><div class="v">Semnal</div><div class="d">Culoarea de bază plus dunga identifică circuitul individual.</div></div>
-<div class="rr"><div class="k">Verde-portocaliu răsucite</div><div class="v">Magistrală CAN</div><div class="d">Perechea răsucită se recunoaște imediat vizual.</div></div>
-<div class="rr"><div class="k">Regulă practică</div><div class="v">Măsoară, nu presupune</div><div class="d">După o reparație anterioară, culorile pot fi orice. Multimetrul e singura sursă de adevăr.</div></div>
+<details data-s="green"><summary><span class="t">Cabluri — cum identifici un fir fără să te bazezi pe culoare<span class="m">13 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Culorile ajută la orientare, dar nu sunt un standard universal. Diferă între producători, se schimbă între generații, și după orice reparație anterioară pot fi orice. Metoda de mai jos funcționează pe orice mașină.</div>
+<div class="rr"><div class="k">Convenția germană (VAG, Mercedes, în general)</div><div class="v">Maro = masă · Roșu = plus permanent · Negru = plus comutat</div><div class="d">Cea mai constantă convenție europeană. Maro pentru masă e aproape universal la mașinile germane.</div></div>
+<div class="rr"><div class="k">Capcana cea mai costisitoare</div><div class="v">Negrul e invers față de convenția americană</div><div class="d">În schemele americane negru = masă. În cele germane, negru = plus comutat. Confuzia asta arde module. Verifică întotdeauna cu multimetrul înainte de a conecta ceva.</div></div>
+<div class="rr"><div class="k">BMW nu urmează schema VAG</div><div class="v">Convenție proprie</div><div class="d">Maro = masă rămâne valabil ca practică germană generală, dar restul codificării diferă. Nu aplica un tabel VAG pe un BMW.</div></div>
+<div class="rr"><div class="k">Francezele (Renault, PSA)</div><div class="v">Numărul contează mai mult decât culoarea</div><div class="d">Firele au marcaje numerice tipărite pe izolație. În schemele oficiale, circuitul se identifică după acel număr, nu după nuanță. Este cea mai fiabilă cale la aceste mărci.</div></div>
+<div class="rr"><div class="k">Abrevierile franceze</div><div class="v">Două litere din numele francez</div><div class="d">NO = noir, RG = rouge, VE = vert, JA = jaune, MA = marron și așa mai departe. Nu ghici echivalența — legenda schemei modelului o dă explicit.</div></div>
+<div class="rr"><div class="k">Galben-verde și conectori galbeni</div><div class="v">Airbag — nu se ating sub tensiune</div><div class="d">Singura culoare cu semnificație de siguranță constantă. Deconectează bateria și așteaptă 15 minute înainte de orice intervenție în zonă.</div></div>
+<div class="rr"><div class="k">CAN — identificare fizică, nu cromatică</div><div class="v">Pereche răsucită</div><div class="d">Cea mai sigură identificare: două fire împletite între ele. La VAG sunt portocalii cu dungă, dar perechea diferă între magistrale (propulsie, confort, infotainment) — nu te baza pe o singură mapare.</div></div>
+<div class="rr"><div class="k">Confirmarea CAN cu multimetrul</div><div class="v">~60Ω între cele două fire</div><div class="d">Cu contactul luat. Este verificarea obiectivă, valabilă pe orice marcă, indiferent de culoare.</div></div>
+<div class="rr"><div class="k">Metoda universală, pasul 1</div><div class="v">Identifică masa</div><div class="d">Multimetru pe tensiune continuă: vârful negru pe caroserie curată, roșul pe fir. Masa arată 0V față de caroserie și continuitate directă la borna negativă.</div></div>
+<div class="rr"><div class="k">Pasul 2</div><div class="v">Separă permanentul de comutat</div><div class="d">Măsoară cu contactul luat, apoi cu contactul pus. Firul care are 12V în ambele situații e permanent; cel care apare doar cu contactul pus e comutat.</div></div>
+<div class="rr"><div class="k">Pasul 3</div><div class="v">Recunoaște un fir de semnal</div><div class="d">Semnalele stau tipic sub 5V și variază. Dacă tensiunea se schimbă când acționezi componenta, ai găsit firul de semnal, nu unul de alimentare.</div></div>
+<div class="rr"><div class="k">Regula finală</div><div class="v">Măsoară, nu presupune</div><div class="d">După o reparație anterioară făcută prost, culorile pot fi complet inversate. Multimetrul e singura sursă de adevăr pe mașina din fața ta.</div></div>
+<div class="rr"><div class="k">Înainte de a tăia orice fir</div><div class="v">Fotografiază și notează</div><div class="d">O fotografie clară a conectorului înainte de intervenție a salvat mai multe cablaje decât orice schemă.</div></div>
 </div></details>
 <details data-s="green"><summary><span class="t">Simboluri din schemele electrice<span class="m">10 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
 <div class="q" style="margin:11px 13px">Legenda necesară pentru a citi orice schemă oficială de service.</div>
@@ -2027,17 +2033,165 @@ summary .m{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:#8494
 <div class="rr"><div class="k">3. Verificare la reprezentanță</div><div class="v">Gratuită, după VIN</div><div class="d">Orice reprezentanță a mărcii poate verifica dacă vehiculul tău are o campanie deschisă. Remedierea unei rechemări de siguranță este gratuită, indiferent de vârsta mașinii sau de câți proprietari a avut.</div></div>
 <div class="rr"><div class="k">4. Autoritatea națională</div><div class="v">RAR în România</div><div class="d">Registrul Auto Român gestionează campaniile de rechemare pe teritoriul național.</div></div>
 <div class="rr"><div class="k">Diferența față de NHTSA</div><div class="v">Piețe diferite, campanii diferite</div><div class="d">Același model poate avea o campanie în SUA și niciuna în Europa, sau invers — configurațiile și normele diferă.</div></div>
-<div class="rr"><div class="k">KBA (Germania)</div><div class="v">Sursa cea mai detaliată</div><div class="d">Autoritatea germană publică analize pe model mai amănunțite decât media europeană, utile pentru vehiculele importate din Germania.</div></div>
+<div class="rr"><div class="k">KBA (Germania)</div><div class="v">kba.de → Rückrufdatenbank</div><div class="d">Autoritatea germană are o bază de rechemări proprie, cu export CSV/Excel, actualizată și cu căutare pe mai multe modele simultan. Cea mai utilă sursă pentru mașinile importate din Germania.</div></div>
 <div class="rr"><div class="k">Rechemare ≠ defect la mașina ta</div><div class="v">Este preventivă</div><div class="d">O campanie vizează un lot; exemplarul tău poate fi neafectat. Verificarea după VIN este singura care spune sigur.</div></div>
 </div></details>
-<details data-s="green"><summary><span class="t">Baze de date deschise pe care le poți consulta singur<span class="m">6 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<details data-s="green"><summary><span class="t">Baze de date deschise pe care le poți consulta singur<span class="m">8 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
 <div class="q" style="margin:11px 13px">Surse oficiale, gratuite, fără cont. Utile când vrei să verifici ceva independent de acest program.</div>
 <div class="rr"><div class="k">NHTSA vPIC (SUA)</div><div class="v">vpic.nhtsa.dot.gov/api</div><div class="d">Catalog de vehicule alimentat de producători. Decodare VIN cu marcă, model, an, motorizare, uzină. Domeniu public. Integrat în acest program, la ecranul VIN.</div></div>
 <div class="rr"><div class="k">NHTSA Recalls (SUA)</div><div class="v">api.nhtsa.gov/recalls</div><div class="d">Campanii de rechemare din 1966 până azi, cu descriere, consecință și remediu. Integrat aici.</div></div>
 <div class="rr"><div class="k">EU Safety Gate</div><div class="v">ec.europa.eu/rapex</div><div class="d">Rechemări europene, 31 de țări, actualizat săptămânal. Căutare după numărul de omologare. Licență CC BY 4.0.</div></div>
+<div class="rr"><div class="k">TÜV Report / ADAC</div><div class="v">Statistici publice anuale</div><div class="d">Rate de defecte pe model din ~9,5 milioane de inspecții și ~3,7 milioane de depanări. Rezumatele sunt publice și gratuite; raportul complet apare ca publicație separată, în germană.</div></div>
+<div class="rr"><div class="k">OpenStreetMap / Overpass</div><div class="v">overpass-api.de — gratuit, fără cheie</div><div class="d">Hartă colaborativă mondială, licență ODbL. Integrat aici pentru găsirea de service, vulcanizări, magazine de piese, stații ITP și benzinării. Datele sunt introduse de voluntari — sună înainte de a te deplasa.</div></div>
 <div class="rr"><div class="k">RDW Open Data (NL)</div><div class="v">opendata.rdw.nl</div><div class="d">Autoritatea olandeză publică sub licență CC-0 date tehnice de vehicule, istoric de inspecții tehnice și catalogul defectelor constatate. Multe modele sunt identice cu cele din România.</div></div>
 <div class="rr"><div class="k">RAR (România)</div><div class="v">rar.ro</div><div class="d">Registrul Auto Român: omologări, ITP, campanii de rechemare pe teritoriul național.</div></div>
 <div class="rr"><div class="k">Ce NU este deschis</div><div class="v">Datele de service pe model</div><div class="d">Scheme electrice, proceduri de reparație, timpi normați și cataloage de piese sunt licențiate (ALLDATA, Autodata, HaynesPro, TecDoc). Nu există echivalent gratuit legal.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Adaptoare ELM327 — versiuni, clone și ce cumperi de fapt<span class="m">16 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">ELM327 este un firmware pentru microcontroler, dezvoltat de Elm Electronics (Canada). Firma s-a închis la mijlocul lui 2022, deci cipuri autentice noi nu se mai produc. Practic tot ce se vinde ieftin astăzi este clonă.</div>
+<div class="rr"><div class="k">Versiuni autentice Elm</div><div class="v">1.0 · 1.0a · 1.1 · 1.2 · 1.2a · 1.3 · 1.3a · 1.4 · 1.4b · 2.0 · 2.1 · 2.2 · 2.3</div><div class="d">Aceasta este lista completă. Orice altă versiune afișată pe carcasă sau raportată de adaptor este invenție de marketing.</div></div>
+<div class="rr"><div class="k">„v1.5” — semnalul clar</div><div class="v">Nu a existat niciodată la Elm</div><div class="d">În 2010, clonele au copiat firmware-ul v1.4b și l-au etichetat v1.5. Este cea mai răspândită clonă și, paradoxal, adesea una dintre cele mai utilizabile — dar autentică nu este.</div></div>
+<div class="rr"><div class="k">„v2.1” — nuanța importantă</div><div class="v">A existat la Elm, dar aproape sigur nu al tău</div><div class="d">Elm chiar a lansat v2.1, cu îmbunătățiri pe CAN. Însă adaptoarele ieftine etichetate v2.1 sunt clone de generație v1.5 cu numărul de versiune crescut ca să pară mai noi.</div></div>
+<div class="rr"><div class="k">„v2.3”, „v2.4” pe adaptoare de 50 lei</div><div class="v">Marketing</div><div class="d">v2.3 a existat ca ultim firmware Elm, dar costa singur cât un adaptor clonă întreg. Pe produse foarte ieftine, eticheta nu înseamnă nimic.</div></div>
+<div class="rr"><div class="k">Anunțuri „Software V2.1 / Hardware V1.5”</div><div class="v">Contradicție în termeni</div><div class="d">Formulare frecventă în magazinele online. Nu descrie nimic real — e doar combinația a două etichete populare.</div></div>
+<div class="rr"><div class="k">Ce cip are înăuntru</div><div class="v">Contează mai mult decât versiunea</div><div class="d">Originalul folosea PIC18F2480. Clonele bune folosesc PIC18F25K80. Cele problematice folosesc STM8/STM32 cu firmware rescris, care se comportă diferit pe unele protocoale.</div></div>
+<div class="rr"><div class="k">Test rapid de identificare</div><div class="v">ATI, apoi ATDP, apoi 0100</div><div class="d">ATI dă versiunea raportată (nu neapărat cea reală), ATDP protocolul detectat, 0100 lista de PID-uri. Dacă 0100 nu răspunde, adaptorul nu a stabilit comunicația.</div></div>
+<div class="rr"><div class="k">Verificare mai serioasă</div><div class="v">Aplicații de identificare a clonelor</div><div class="d">Există utilitare dedicate care interoghează adaptorul și estimează dacă firmware-ul e autentic. Merită rulate înainte de a te baza pe adaptor pentru ceva important.</div></div>
+<div class="rr"><div class="k">Unde clonele chiar eșuează</div><div class="v">Software care cere conformitate strictă</div><div class="d">FORScan (Ford), BimmerCode/BimmerLink (BMW) și alte aplicații avansate cer adaptoare verificate. Pentru citit coduri și date live, o clonă bună e suficientă.</div></div>
+<div class="rr"><div class="k">Alternativa serioasă</div><div class="v">Cipuri STN (ScanTool/OBDLink)</div><div class="d">Nu sunt ELM327, ci implementări superioare compatibile cu setul de comenzi. Costă de câteva ori mai mult și rezolvă exact problemele clonelor.</div></div>
+<div class="rr"><div class="k">Protocoale problematice</div><div class="v">ISO 9141 și KWP cu inițializare lentă</div><div class="d">Clonele ieftine eșuează cel mai des pe vehiculele europene de dinainte de ~2006, care folosesc aceste protocoale.</div></div>
+<div class="rr"><div class="k">Consum în repaus</div><div class="v">Scoate-l din priză</div><div class="d">Doar adaptoarele cu mod de repaus verificat pot rămâne conectate. Cele generice consumă continuu și îți descarcă bateria în 1–2 săptămâni.</div></div>
+<div class="rr"><div class="k">Bluetooth vs Wi-Fi vs USB</div><div class="v">Wi-Fi e cel mai capricios</div><div class="d">Bluetooth clasic merge bine pe Android. Wi-Fi cere schimbarea rețelei telefonului și pierzi internetul. USB e cel mai stabil, dar cere cablu OTG.</div></div>
+<div class="rr"><div class="k">iPhone</div><div class="v">Doar Bluetooth LE sau Wi-Fi</div><div class="d">iOS nu acceptă Bluetooth clasic pentru aceste adaptoare. Verifică explicit compatibilitatea iOS înainte de cumpărare.</div></div>
+<div class="rr"><div class="k">Ce NU poate niciun ELM327</div><div class="v">Module non-motor</div><div class="d">Citește sistemul de emisii: motor și transmisie. ABS, airbag, climatizare, imobilizator cer un tester dedicat mărcii, indiferent de versiune.</div></div>
+<div class="rr"><div class="k">Ce poate, totuși, foarte bine</div><div class="v">Coduri, date live, freeze frame, monitoare</div><div class="d">Pentru diagnoza de motor și verificarea pregătirii pentru ITP, un adaptor de 50 de lei plus o aplicație bună acoperă surprinzător de mult.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Baze de date deschise pentru coduri — ce e utilizabil<span class="m">7 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Am verificat sursele frecvent recomandate. Nu toate sunt ce par, iar licența contează la fel de mult ca volumul.</div>
+<div class="rr"><div class="k">OBDb (obdb.community)</div><div class="v">CC BY-SA 4.0 — utilizabil cu condiții</div><div class="d">Comunitate activă, actualizat zilnic, documentează parametri și coduri pe marcă și model. Fiind copyleft, orice text preluat obligă redistribuirea aceleiași părți sub CC BY-SA. Merită consultat direct.</div></div>
+<div class="rr"><div class="k">OBDII.DTC (MIT)</div><div class="v">Licență permisivă</div><div class="d">Câteva mii de coduri generice cu descrieri, sub licență MIT. Datele sunt însă structurate pentru .NET și în engleză.</div></div>
+<div class="rr"><div class="k">Depozite cu „mii de coduri de producător”</div><div class="v">Tratează-le cu suspiciune</div><div class="d">Nicio sursă publică nu deține legitim zeci de mii de definiții proprietare. Multe astfel de baze sunt compilate din site-uri comerciale, fără licență și fără verificare.</div></div>
+<div class="rr"><div class="k">Liste care trimit la site-uri comerciale</div><div class="v">Semnal de alarmă</div><div class="d">Dacă un depozit „gratuit” te trimite la un site plătit pentru „informații complete”, datele provin probabil de acolo.</div></div>
+<div class="rr"><div class="k">De ce nu am importat masiv</div><div class="v">Un cod greșit costă o piesă bună</div><div class="d">621 de coduri verificate, în română, cu gravitate și note din practică, sunt mai utile decât 28.000 traduse automat din surse neverificate. Pentru codurile care lipsesc, programul decodează structura după SAE J2012 și îți spune unde să cauți definiția exactă.</div></div>
+<div class="rr"><div class="k">FuseLayouts, FuseBoxInfo și similare</div><div class="v">Conținut protejat</div><div class="d">Schemele de siguranțe pe model sunt proprietatea acestor site-uri sau a producătorilor. Se consultă direct, nu se copiază.</div></div>
+<div class="rr"><div class="k">Haynes, Chilton, ALLDATA, TecDoc</div><div class="v">Licențiate contra cost</div><div class="d">Cupluri de strângere, timpi normați și cataloage de piese. Nu există echivalent gratuit legal.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Buletine tehnice (TSB) — cum le folosești<span class="m">8 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Cea mai subutilizată sursă gratuită de informație tehnică. Publice în SUA din 2015, după un mandat al Congresului.</div>
+<div class="rr"><div class="k">Ce este un TSB</div><div class="v">Comunicare fabrică → dealer</div><div class="d">„Această problemă apare pe modelul X, cauza este Y, procedura de reparație este Z.” Scris de inginerii producătorului, nu de un forum.</div></div>
+<div class="rr"><div class="k">De ce contează</div><div class="v">Un cod generic poate ascunde un TSB</div><div class="d">Scanerul îți dă P0171. TSB-ul poate spune că exact pe motorul tău garnitura galeriei se degradează și există o piesă revizuită. Diferența dintre a ghici și a ști.</div></div>
+<div class="rr"><div class="k">TSB ≠ rechemare</div><div class="v">Reparația nu e automat gratuită</div><div class="d">Rechemarea vizează siguranța și e gratuită oricând. TSB-ul e o procedură; poate fi acoperit de garanție sau de o extindere de garanție, dar nu obligatoriu.</div></div>
+<div class="rr"><div class="k">Cum îl folosești la service</div><div class="v">Ca argument, nu ca pretenție</div><div class="d">„Există buletinul numărul X care descrie exact acest simptom, cu soluția Y.” Un service serios îl verifică imediat.</div></div>
+<div class="rr"><div class="k">Unde le găsești gratuit</div><div class="v">nhtsa.gov/recalls → Manufacturer Communications</div><div class="d">Introdu an, marcă, model. Nu e nevoie de VIN. Buletinele complete sunt în PDF.</div></div>
+<div class="rr"><div class="k">Limita geografică</div><div class="v">Baza acoperă piața din SUA</div><div class="d">Un model european identic poate avea buletine proprii, netranspuse. Verifică și la reprezentanța locală a mărcii.</div></div>
+<div class="rr"><div class="k">„Garanție secretă”</div><div class="v">Extinderi de garanție nepublicate</div><div class="d">Unii producători extind garanția pentru defecte cunoscute fără să anunțe public. TSB-ul e adesea singura urmă scrisă.</div></div>
+<div class="rr"><div class="k">Înainte de 2012</div><div class="v">Acoperire incompletă</div><div class="d">Buletinele mai vechi pot lipsi din bază sau perioada de acoperire să fi expirat.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">KBA — rechemări europene și identificare exactă (import german)<span class="m">10 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Kraftfahrt-Bundesamt este autoritatea germană de omologare. Contează pentru România pentru că o mare parte din parcul rulat provine din Germania, iar omologarea germană (e1) acoperă o felie uriașă din flota europeană.</div>
+<div class="rr"><div class="k">Baza de rechemări (RRDB)</div><div class="v">kba.de → Marktüberwachung → Rückrufdatenbank</div><div class="d">Relansată în martie 2025. Conține mărcile și modelele afectate, defectul constatat și măsura de remediere. Acoperă rechemările din competența KBA.</div></div>
+<div class="rr"><div class="k">Ce o face utilă</div><div class="v">Export CSV și Excel</div><div class="d">Spre deosebire de multe baze oficiale, rezultatele căutării se pot descărca în format prelucrabil. Se pot căuta mai multe modele simultan.</div></div>
+<div class="rr"><div class="k">De ce contează pentru România</div><div class="v">Import german masiv</div><div class="d">Dacă mașina ta a fost înmatriculată prima dată în Germania, campaniile KBA o vizează direct — chiar dacă acum e pe numere românești.</div></div>
+<div class="rr"><div class="k">HSN (câmpul 2.1 din Fahrzeugschein)</div><div class="v">Cod producător, 4 cifre</div><div class="d">Identifică fabricantul. Ex: 0603 = Honda, 0588 = Toyota, 0005 = BMW. Se păstrează pe documentele germane vechi ale mașinii.</div></div>
+<div class="rr"><div class="k">TSN (câmpul 2.2)</div><div class="v">Cod tip, 3 caractere</div><div class="d">Identifică varianta exactă: caroserie, motorizare, echipare. Perechea HSN/TSN este cel mai precis identificator de variantă din Europa.</div></div>
+<div class="rr"><div class="k">La ce folosesc practic</div><div class="v">Piese care se potrivesc din prima</div><div class="d">Cataloagele de piese europene acceptă HSN/TSN și returnează exact referințele corecte. Elimină ghicitul între variante de motorizare.</div></div>
+<div class="rr"><div class="k">HSN/TSN ≠ număr de omologare UE</div><div class="v">Două sisteme diferite</div><div class="d">HSN/TSN este sistemul german de identificare a variantei. Numărul de omologare (e1*2007/46*0172, câmpul K din talonul românesc) este identificatorul european al tipului. Nu se confundă.</div></div>
+<div class="rr"><div class="k">Dacă ai doar talonul românesc</div><div class="v">Caută după marcă, model și an</div><div class="d">Baza KBA permite căutarea și fără HSN/TSN. Documentele germane originale, dacă le ai de la vânzător, îți dau precizia maximă.</div></div>
+<div class="rr"><div class="k">Limba</div><div class="v">Interfață în germană și engleză</div><div class="d">Site-ul KBA are versiune engleză. Denumirile defectelor sunt tehnice și se traduc ușor.</div></div>
+<div class="rr"><div class="k">Ce NU găsești acolo</div><div class="v">Proceduri de reparație</div><div class="d">Baza spune ce defect există și care e măsura de remediere, nu cum se execută. Pentru asta rămâne documentația mărcii.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Date pe model — sunt deja pe mașina ta<span class="m">10 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Pentru cele mai căutate date specifice modelului, sursa autoritativă nu e o bază de date, ci vehiculul însuși. E mai exactă decât orice copie, pentru că se potrivește exact variantei tale.</div>
+<div class="rr"><div class="k">Presiune anvelope</div><div class="v">Plăcuța din montantul ușii șofer</div><div class="d">Uneori pe clapeta rezervorului sau în torpedou. Conține presiunea față/spate, la sarcină normală și completă, plus dimensiunea OEM. Nicio bază de date nu bate plăcuța de pe mașina ta.</div></div>
+<div class="rr"><div class="k">Dimensiune anvelope OEM</div><div class="v">Aceeași plăcuță</div><div class="d">Include și dimensiunile alternative omologate. Valoarea de pe flancul anvelopei montate arată ce e montat acum, nu neapărat ce e corect.</div></div>
+<div class="rr"><div class="k">Schema siguranțelor</div><div class="v">Pe capacul cutiei de siguranțe</div><div class="d">Aproape toate mașinile au diagrama tipărită pe interiorul capacului sau pe o etichetă lipită. Include amperajul și funcția protejată. Manualul de utilizare o repetă, cu explicații.</div></div>
+<div class="rr"><div class="k">Capacități de fluide</div><div class="v">Manualul de utilizare, secțiunea date tehnice</div><div class="d">Pentru ulei de motor, jojă și procedura de completare sunt mai sigure decât o cifră dintr-un tabel: contează și cât a rămas în circuit după golire.</div></div>
+<div class="rr"><div class="k">Norma de ulei cerută</div><div class="v">Capacul de umplere sau manualul</div><div class="d">Multe capace au norma ștanțată direct (ex. VW 504.00). Este cerința care contează — mai mult decât vâscozitatea.</div></div>
+<div class="rr"><div class="k">Intervale de service</div><div class="v">Manualul + indicatorul din bord</div><div class="d">Mașinile moderne calculează intervalul după utilizare reală, nu după kilometri ficși. Un tabel generic poate să te trimită prea târziu sau prea devreme.</div></div>
+<div class="rr"><div class="k">Cod motor</div><div class="v">Talon, câmpul P.5</div><div class="d">Cel mai precis identificator pentru piese și diagnoză. Îl ai deja pe hârtie.</div></div>
+<div class="rr"><div class="k">Număr de omologare</div><div class="v">Talon, câmpul K</div><div class="d">Cheia pentru căutarea rechemărilor europene.</div></div>
+<div class="rr"><div class="k">Cupluri de strângere</div><div class="v">Manualul de service al modelului</div><div class="d">Pentru chiulasă, roți, suspensie și frânare NU se aproximează. Valorile generice de mai jos sunt orientative pentru șuruburi obișnuite, nu pentru elemente critice.</div></div>
+<div class="rr"><div class="k">De ce nu am copiat aceste date</div><div class="v">O copie e mai proastă decât originalul</div><div class="d">Ar fi neactualizată, incompletă pe variante și, la elemente critice, periculoasă. Plus că sunt licențiate comercial. Prefer să-ți spun unde e sursa exactă.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Cupluri de strângere — valori generice după filet<span class="m">12 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Valori orientative pentru șuruburi de oțel, filet metric standard, uscat, conform practicii inginerești uzuale. NU se aplică la chiulasă, roți, suspensie sau frânare — acolo se folosesc exclusiv valorile din manualul modelului.</div>
+<div class="rr"><div class="k">M6 · clasa 8.8</div><div class="v">~10 Nm</div><div class="d">Clasa 10.9: ~14 Nm. Șuruburi mici de capace și suporturi.</div></div>
+<div class="rr"><div class="k">M8 · clasa 8.8</div><div class="v">~25 Nm</div><div class="d">Clasa 10.9: ~35 Nm. Cel mai frecvent filet la accesorii de motor.</div></div>
+<div class="rr"><div class="k">M10 · clasa 8.8</div><div class="v">~50 Nm</div><div class="d">Clasa 10.9: ~70 Nm.</div></div>
+<div class="rr"><div class="k">M12 · clasa 8.8</div><div class="v">~85 Nm</div><div class="d">Clasa 10.9: ~120 Nm.</div></div>
+<div class="rr"><div class="k">M14 · clasa 8.8</div><div class="v">~135 Nm</div><div class="d">Clasa 10.9: ~190 Nm.</div></div>
+<div class="rr"><div class="k">M16 · clasa 8.8</div><div class="v">~210 Nm</div><div class="d">Clasa 10.9: ~295 Nm.</div></div>
+<div class="rr"><div class="k">Unde scrie clasa</div><div class="v">Ștanțat pe capul șurubului</div><div class="d">„8.8”, „10.9”, „12.9”. Un șurub 10.9 înlocuit cu 8.8 la același cuplu se poate rupe.</div></div>
+<div class="rr"><div class="k">Filet uns vs uscat</div><div class="v">Uns cere cuplu mai mic</div><div class="d">Ungerea reduce frecarea; același cuplu produce o tensiune mult mai mare în șurub. Dacă manualul nu specifică „uns”, se strânge uscat.</div></div>
+<div class="rr"><div class="k">Șuruburi cu strângere unghiulară</div><div class="v">Nu se refolosesc</div><div class="d">Chiulasă, biele, roți la unele modele: se strâng la un cuplu de bază plus un unghi. Se deformează plastic și se înlocuiesc obligatoriu.</div></div>
+<div class="rr"><div class="k">Roți — ordinea de strângere</div><div class="v">În cruce, în două treceri</div><div class="d">Prima trecere la jumătate de cuplu, a doua la valoarea finală. Mașina coborâtă pe roți la strângerea finală.</div></div>
+<div class="rr"><div class="k">Roți — valoarea</div><div class="v">Din manual; tipic 110–140 Nm</div><div class="d">Variază cu diametrul prezonului și cu tipul jantei. Strâns „cât poți” deformează discul de frână.</div></div>
+<div class="rr"><div class="k">Verificare după montaj</div><div class="v">Reverifică roțile după ~50 km</div><div class="d">Practică standard după orice schimbare de roți.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Distribuție — ce trebuie să știi înainte de intervenție<span class="m">13 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Cea mai costisitoare greșeală posibilă la o mașină. Această secțiune nu conține cupluri sau numere de scule pe model — acelea se iau exclusiv din documentația producătorului. Conține principiile care se aplică oricărui motor.</div>
+<div class="rr"><div class="k">Curea vs lanț — diferența reală</div><div class="v">Curea = interval fix. Lanț = până cedează</div><div class="d">Cureaua are interval de înlocuire declarat. Lanțul e proiectat „pe viață”, ceea ce în practică înseamnă că nu are interval — se schimbă când dă semne sau când e prea târziu.</div></div>
+<div class="rr"><div class="k">„Lanț pe viață” — cum se citește</div><div class="v">Viața garanției, nu a motorului</div><div class="d">Pe motoarele cu lanț problematic (1.4 TSI EA111, BMW N47, 1.6 THP), comunitatea a stabilit praguri proprii de prevenție. Sunt euristici utile, nu specificații de fabrică — nu le confunda.</div></div>
+<div class="rr"><div class="k">Vârsta contează cât kilometrajul</div><div class="v">Cauciucul îmbătrânește și nefolosit</div><div class="d">O curea la 5–7 ani se schimbă chiar dacă mașina a stat. Intervalul din manual are întotdeauna două limite: kilometri ȘI ani. Se aplică prima atinsă.</div></div>
+<div class="rr"><div class="k">Intervalele se revizuiesc în jos</div><div class="v">Verifică valoarea actuală, nu cea din 2015</div><div class="d">Mai mulți producători au scurtat oficial intervalele după cedări în serie. Un tabel vechi te poate trimite mult peste limita actuală.</div></div>
+<div class="rr"><div class="k">Ce se schimbă odată cu cureaua</div><div class="v">Role, întinzător, pompă de apă</div><div class="d">Manopera e aceeași. A schimba doar cureaua și a lăsa o pompă de apă la 200.000 km înseamnă a repeta lucrarea peste un an, cu riscul ca pompa să blocheze cureaua între timp.</div></div>
+<div class="rr"><div class="k">Sculele de calare nu sunt opționale</div><div class="v">Fără ele, lucrarea e o loterie</div><div class="d">Fiecare motor are pini și cale dedicate pentru arbore cotit și axe cu came. Improvizația cu marcaje cu vopsea funcționează până nu funcționează, iar atunci supapele ating pistoanele.</div></div>
+<div class="rr"><div class="k">Șuruburi cu strângere unghiulară</div><div class="v">Se înlocuiesc întotdeauna</div><div class="d">Șurubul de fulie și cele de pinioane se deformează plastic la montaj. Refolosite, se pot rupe în arbore — o reparație mult mai scumpă decât motorul deschis.</div></div>
+<div class="rr"><div class="k">Verificarea obligatorie după montaj</div><div class="v">Două rotații complete, cu mâna</div><div class="d">Se rotește arborele cotit două ture în sensul normal, apoi se verifică din nou marcajele. Dacă ceva nu revine la loc, se oprește acolo — nu se pornește motorul.</div></div>
+<div class="rr"><div class="k">Confirmarea electronică</div><div class="v">Valori de corelație cu testerul</div><div class="d">După montaj, se citește abaterea arbore cotit / axe cu came. E singura verificare obiectivă că distribuția e la locul ei.</div></div>
+<div class="rr"><div class="k">Semnele că lanțul e întins</div><div class="v">Zornăit 2–3 secunde la pornirea la rece</div><div class="d">Plus coduri P0016/P0017 (corelație). Lanțul nu dă avertismente progresive — sare brusc.</div></div>
+<div class="rr"><div class="k">Ce întrebi la service înainte</div><div class="v">Trei întrebări care spun tot</div><div class="d">„Folosiți sculele de calare originale pentru motorul acesta?”, „Schimbați și pompa de apă și rolele?”, „Verificați valorile de corelație cu testerul după montaj?” Un atelier serios răspunde imediat la toate trei.</div></div>
+<div class="rr"><div class="k">De unde iei valorile exacte</div><div class="v">Documentația modelului tău</div><div class="d">Cuplurile, unghiurile și numerele de scule sunt specifice motorului și anului, se revizuiesc, și sunt publicate doar de producător. Un atelier fără acces la ele nu ar trebui să facă lucrarea.</div></div>
+<div class="rr"><div class="k">De ce nu găsești aici cifre pe model</div><div class="v">Riscul nu justifică aproximarea</div><div class="d">O cifră neverificată la distribuție nu costă o piesă, ci motorul — sau siguranța în mers, dacă fulia se desface la viteză. Prefer să lipsească decât să fie greșită.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Frână de mână electrică (EPB) — de ce nu se improvizează<span class="m">10 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Cea mai frecventă intervenție la care oamenii încearcă să evite testerul, și una dintre puținele unde consecința e de siguranță, nu de bani.</div>
+<div class="rr"><div class="k">De ce e diferită de frâna clasică</div><div class="v">Pistonul e împins de un motor cu șurub</div><div class="d">Nu se retrage apăsând cu o presă, ca la un etrier obișnuit. Un motoraș rotește un ax filetat care avansează pistonul. Forțat mecanic, distrugi filetul.</div></div>
+<div class="rr"><div class="k">Modul service — pasul obligatoriu</div><div class="v">Retrage actuatorul și anunță modulul</div><div class="d">Comanda de service retrage șurubul complet și pune sistemul în starea în care se pot schimba plăcuțele. Fără ea, nu ai spațiu și modulul nu știe ce s-a întâmplat.</div></div>
+<div class="rr"><div class="k">Verifică întâi în mașină</div><div class="v">Multe modele au modul service în meniu</div><div class="d">O parte dintre mașinile moderne au procedura în meniul de bord sau infotainment, fără niciun tester. Merită căutată acolo înainte de a improviza sau de a plăti.</div></div>
+<div class="rr"><div class="k">Ce se strică dacă forțezi</div><div class="v">Șurub, motoraș, etrier</div><div class="d">Rotirea axului în sens greșit îl împinge în opritor. Rezultatul e un etrier nou, care costă de câteva ori mai mult decât intervenția la un service cu tester.</div></div>
+<div class="rr"><div class="k">Sensul de rotație nu e universal</div><div class="v">Diferă între producători și uneori între părți</div><div class="d">Procedurile găsite pe internet care dau un sens unic pentru toate mașinile sunt periculoase. Etrierele stânga și dreapta pot fi în oglindă.</div></div>
+<div class="rr"><div class="k">Recalibrarea după intervenție</div><div class="v">Obligatorie, indiferent de metodă</div><div class="d">Modulul trebuie să reînvețe poziția de repaus și cursa. Sărită, frâna poate strânge insuficient — mașina pleacă de pe pantă — sau poate rămâne parțial acționată și supraîncălzi plăcuțele.</div></div>
+<div class="rr"><div class="k">De ce improvizația nu scapă de tester</div><div class="v">Recalibrarea tot îl cere</div><div class="d">Chiar dacă retragi mecanic actuatorul, sistemul rămâne necalibrat. Ai făcut munca grea și tot ai nevoie de tester la final.</div></div>
+<div class="rr"><div class="k">Testul final, obligatoriu</div><div class="v">Pe o pantă, cu mașina goală și încărcată</div><div class="d">După orice lucrare la EPB: verifică pe o rampă că ține, de mai multe ori. Este singura confirmare că funcționează.</div></div>
+<div class="rr"><div class="k">Coduri asociate</div><div class="v">C1100, C1101, U0128</div><div class="d">C1101 înseamnă exact „necesită modul de service”. Nu e defect — e sistemul care îți spune procedura corectă.</div></div>
+<div class="rr"><div class="k">Concluzia onestă</div><div class="v">Dacă nu ai tester, aceasta e lucrarea de plătit</div><div class="d">Multe intervenții se pot face acasă cu răbdare. Aceasta nu: e sistem de frânare, cu recalibrare obligatorie și cu piese scumpe dacă greșești sensul.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Resetări din bord — ce se poate face fără tester<span class="m">6 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">O parte dintre resetări sunt accesibile din butoanele mașinii. Procedura exactă diferă după model, an și tipul de ceasuri — se ia din manualul de utilizare, care e exact pentru varianta ta.</div>
+<div class="rr"><div class="k">Indicator de service / ulei</div><div class="v">Aproape întotdeauna posibil din bord</div><div class="d">Tiparul general: cu contactul luat se ține apăsat butonul de kilometraj zilnic sau SET, se pune contactul fără a porni, se confirmă. Detaliile diferă — manualul le are.</div></div>
+<div class="rr"><div class="k">La mașinile cu infotainment</div><div class="v">Caută în meniul Service sau Vehicul</div><div class="d">Pe modelele recente, resetarea s-a mutat din butoane în meniul ecranului central. Acolo e și mai simplă.</div></div>
+<div class="rr"><div class="k">Reînvățare TPMS</div><div class="v">Adesea un buton sau o opțiune de meniu</div><div class="d">La sistemele indirecte (fără senzori în roți), resetarea se face după ce ai pus presiunea corectă la rece. La cele cu senzori, roțile noi pot cere declarare cu un tester dedicat.</div></div>
+<div class="rr"><div class="k">Ce NU se resetează din bord</div><div class="v">Adaptări, codări, calibrări</div><div class="d">Adaptarea clapetei, calibrarea senzorului de unghi volan, codificarea injectoarelor, modul service EPB — toate cer tester.</div></div>
+<div class="rr"><div class="k">Avertismentul care contează</div><div class="v">Resetarea nu înlocuiește lucrarea</div><div class="d">A reseta indicatorul fără a face schimbul de ulei înseamnă doar a-ți ascunde ție intervalul real. La revânzare, istoricul electronic al mașinii spune adevărul oricum.</div></div>
+<div class="rr"><div class="k">După ștergerea codurilor</div><div class="v">Monitoarele rămân „not ready”</div><div class="d">Mașina are nevoie de un ciclu complet de conducere ca să-și refacă autotestele. Până atunci, ITP-ul poate fi respins chiar fără niciun defect real.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Statistici de fiabilitate — TÜV și ADAC<span class="m">12 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Două rapoarte germane anuale, bazate pe volume care fac cifrele credibile. Relevante direct pentru România, unde o mare parte din parcul rulat provine din Germania.</div>
+<div class="rr"><div class="k">TÜV Report</div><div class="v">~9,5 milioane de inspecții tehnice pe an</div><div class="d">Măsoară procentul de vehicule respinse la inspecție, defalcat pe model și pe grupă de vârstă. Ediția din noiembrie 2025 acoperă perioada precedentă.</div></div>
+<div class="rr"><div class="k">ADAC Pannenstatistik</div><div class="v">~3,7 milioane de intervenții rutiere</div><div class="d">Cel mai mare club auto din Europa înregistrează fiecare depanare. Indicele se calculează ca depanări la 1.000 de vehicule înmatriculate, pe 158 de serii de la 27 de producători.</div></div>
+<div class="rr"><div class="k">Ce măsoară fiecare — diferența</div><div class="v">Defecte la inspecție vs pene în trafic</div><div class="d">TÜV arată starea tehnică la control, care depinde și de cât de bine a fost întreținută mașina. ADAC arată cât de des te lasă efectiv pe drum. Un model poate ieși bine la unul și slab la celălalt.</div></div>
+<div class="rr"><div class="k">Rata generală de respingere</div><div class="v">~21,5% defecte semnificative sau periculoase</div><div class="d">Aproximativ una din cinci mașini nu primește viza din prima. Procentul a crescut ușor față de anul precedent.</div></div>
+<div class="rr"><div class="k">Vârsta e factorul dominant</div><div class="v">~6% la 2–3 ani → ~28% la 12–13 ani</div><div class="d">Rata de defecte crește puternic cu vechimea. La cumpărarea unei mașini de peste 10 ani, verificarea pe elevator nu e opțională.</div></div>
+<div class="rr"><div class="k">Cele mai frecvente cauze de „periculos”</div><div class="v">Frâne, direcție, coroziune structurală</div><div class="d">Peste 15.000 de vehicule au fost scoase din circulație într-un singur ciclu de raportare din aceste motive. Sunt exact zonele de verificat la o rulată.</div></div>
+<div class="rr"><div class="k">Vârful clasamentului</div><div class="v">Mazda 2, Mercedes Clasa B, VW T-Roc</div><div class="d">În ediția 2026, cu rate de defecte în jur de 3% la categoria 2–3 ani.</div></div>
+<div class="rr"><div class="k">Electricele — imaginea reală</div><div class="v">Majoritatea la fel de fiabile ca termicele</div><div class="d">Fiat 500e, BMW i3 și Mini Cooper SE s-au clasat între cele mai bune. Excepțiile notabile au fost modelele Tesla, cu Model Y pe ultimul loc la categoria 2–3 ani.</div></div>
+<div class="rr"><div class="k">De ce cedează electricele când cedează</div><div class="v">Suspensie și frâne, nu propulsie</div><div class="d">Explicația dată de TÜV: masa mare a bateriei solicită suspensia, iar frânarea regenerativă face ca frânele de fricțiune să fie rar folosite. Discurile ruginesc și performanța de frânare poate scădea.</div></div>
+<div class="rr"><div class="k">Ce NU spun aceste cifre</div><div class="v">Nu prezic exemplarul din fața ta</div><div class="d">Sunt medii pe model. O mașină întreținută prost dintr-un model bun e mai riscantă decât una îngrijită dintr-un model mediocru. Folosește-le ca semnal, nu ca verdict.</div></div>
+<div class="rr"><div class="k">Cum le folosești practic</div><div class="v">Ca listă de verificat, nu ca listă de evitat</div><div class="d">Dacă un model iese slab la un anumit capitol, verifică exact acel capitol la exemplarul pe care îl cumperi.</div></div>
+<div class="rr"><div class="k">Unde le găsești</div><div class="v">tuev-nord.de, tuv.com, adac.de</div><div class="d">Rezumatele anuale sunt publice și gratuite. Raportul complet AutoBild TÜV apare ca publicație separată, în germană.</div></div>
+</div></details>
+<details data-s="green"><summary><span class="t">Electrice și hibride — întreținerea care se uită<span class="m">9 intrări</span></span></summary><div class="bd" style="padding:0 0 6px">
+<div class="q" style="margin:11px 13px">Mașinile electrice au mai puține piese în mișcare, dar problemele lor sunt altele decât la termice. Statisticile TÜV le confirmă an de an.</div>
+<div class="rr"><div class="k">Frânele — problema numărul unu</div><div class="v">Se folosesc prea puțin</div><div class="d">Frânarea regenerativă face ca plăcuțele și discurile să intre rar în contact. Discurile ruginesc, plăcuțele se lipesc, iar la o frânare de urgență performanța poate fi mult sub așteptări.</div></div>
+<div class="rr"><div class="k">Ce faci concret</div><div class="v">Frânări ferme periodice</div><div class="d">Câteva frânări puternice pe lună, în siguranță, curăță pelicula de rugină. Este cel mai simplu obicei preventiv pentru un electric.</div></div>
+<div class="rr"><div class="k">Verificare la service</div><div class="v">Etrieri și ghidaje, nu doar grosime</div><div class="d">Plăcuțele pot avea grosime bună și totuși etrierul să fie gripat din lipsă de utilizare. Se cere curățarea și ungerea ghidajelor.</div></div>
+<div class="rr"><div class="k">Suspensia</div><div class="v">Solicitată de masa bateriei</div><div class="d">Un electric cântărește semnificativ mai mult decât echivalentul termic. Bucșele, amortizoarele și rulmenții se uzează mai repede — verificare mai deasă.</div></div>
+<div class="rr"><div class="k">Anvelopele</div><div class="v">Uzură accelerată</div><div class="d">Masa mare plus cuplul instantaneu consumă anvelopele mai repede. Presiunea corectă contează și mai mult decât la o mașină termică.</div></div>
+<div class="rr"><div class="k">Bateria auxiliară de 12V</div><div class="v">Cedează mai des decât cea de tracțiune</div><div class="d">Alimentează electronica și contactoarele de înaltă tensiune. Descărcată, mașina nu pornește deloc, deși bateria mare e plină.</div></div>
+<div class="rr"><div class="k">Ventilația bateriei de tracțiune</div><div class="v">Grila se înfundă cu praf</div><div class="d">La modelele cu răcire pe aer, aspirația e adesea în habitaclu. Curățarea periodică previne degradarea prematură a modulelor.</div></div>
+<div class="rr"><div class="k">Lichidul de răcire al bateriei</div><div class="v">Există și se schimbă</div><div class="d">La modelele cu răcire lichidă, circuitul are propriul interval de întreținere, distinct de cel al motorului termic la hibride.</div></div>
+<div class="rr"><div class="k">Ce rămâne identic</div><div class="v">Filtru de polen, ștergătoare, lichid de frână</div><div class="d">Lichidul de frână este higroscopic indiferent de propulsie — se schimbă la 2 ani și la un electric.</div></div>
 </div></details>
 <a class="top" href="#top">↑ sus</a>
 <h2 id="s5">5 · Diagnoză pe simptome</h2>
@@ -3322,6 +3476,7 @@ summary .m{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:#8494
       <button class="row" onclick="go('raw')"><div class="r-main"><span class="r-t">Decodor răspuns OBD brut</span><span class="r-s">Traduce ce îți arată adaptorul ELM327</span></div><span class="r-go">›</span></button>
       <button class="row" onclick="go('pid')"><div class="r-main"><span class="r-t">PID-uri, comenzi și protocoale</span><span class="r-s">SAE J1979 · ELM327 · CAN, KWP, ISO 9141</span></div><span class="r-go">›</span></button>
       <button class="row" onclick="go('diagrame')"><div class="r-main"><span class="r-t">Diagrame de principiu</span><span class="r-s">Pinout OBD, releu, CAN, common-rail, EGR, răcire</span></div><span class="r-go">›</span></button>
+      <button class="row" onclick="goTSB()"><div class="r-main"><span class="r-t">Buletine tehnice (TSB)</span><span class="r-s">Ce a comunicat fabrica dealerilor despre problema ta</span></div><span class="r-go">›</span></button>
       <button class="row" onclick="goRecalls()"><div class="r-main"><span class="r-t">Rechemări (NHTSA)</span><span class="r-s">Campanii oficiale pentru vehiculul selectat · necesită internet</span></div><span class="r-go">›</span></button>
       <button class="row" onclick="go('vin')"><div class="r-main"><span class="r-t">Decodare VIN</span><span class="r-s">Producător, an de model, uzină</span></div><span class="r-go">›</span></button>
 
@@ -3465,6 +3620,29 @@ summary .m{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:#8494
         </select>
       </div>
       <div id="poiOut"></div>
+    </section>
+
+    <section class="screen" id="s-tsb">
+      <div class="note info"><b>TSB = buletin tehnic de service.</b> Comunicarea producătorului către dealeri:
+        „această problemă apare, iată cauza și procedura de reparație". Un cod de eroare generic poate ascunde
+        exact un asemenea buletin, care descrie problema ta în cuvintele fabricii.</div>
+      <div style="display:flex;gap:8px;margin-bottom:10px;">
+        <input type="text" id="tsbMake" placeholder="Marcă" autocomplete="off"
+          style="flex:2;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:15px;color:var(--text);">
+        <input type="text" id="tsbYear" placeholder="An" inputmode="numeric" maxlength="4" autocomplete="off"
+          style="flex:1;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:15px;color:var(--text);">
+      </div>
+      <div class="srch">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        <input type="text" id="tsbModel" placeholder="Model" autocomplete="off">
+      </div>
+      <button class="btn" onclick="runTSB()">Caută buletine</button>
+      <div id="tsbOut" style="margin-top:14px;"></div>
+      <div class="note warn" style="margin-top:16px;">
+        <b>Atenție la interpretare.</b> Un TSB nu este rechemare: reparația nu e automat gratuită.
+        Dar dacă buletinul descrie exact simptomul tău, e un argument solid la service și îți spune
+        care e soluția pe care fabrica o consideră corectă — nu una improvizată.
+      </div>
     </section>
 
     <section class="screen" id="s-probleme">
@@ -3648,7 +3826,7 @@ const PLAYBOOK_DB = [
    quick:'2-3 secunde de zornăit metalic la pornirea la rece = întinzător de lanț slăbit. Nu ignora — un lanț sărit distruge motorul.',
    steps:['Localizează sunetul: din față (majoritatea) sau din spatele motorului, dinspre cutie (N47 BMW).','Scanează pentru P0016/P0017 — corelație arbore cotit/came.','Verifică istoricul de service pentru înlocuire de lanț sau întinzător.','Verifică nivelul și starea uleiului — un lanț „zgomotos” poate fi și un întinzător flămând de presiune.','Cere o verificare a decalajului distribuției cu testerul (valori de corelație).','Estimează costul REAL: pe N47 și pe motoarele cu lanț în spate, manopera domină factura.'],
    traps:['Amânarea „că merge bine” — lanțul nu dă avertismente progresive, sare brusc.','Înlocuirea doar a întinzătorului pe un lanț deja întins.'],
-   verdict:'Pe 1.4 TSI EA111 (2007–2013), N47 BMW (2007–2011) și 1.6 THP/N14, zgomotul la rece e semnal de intervenție, nu de observație.'},
+   verdict:'Pe 1.4 TSI EA111 (2007–2013), N47 BMW (2007–2011) și 1.6 THP/N14, zgomotul la rece e semnal de intervenție, nu de observație. BMW nu a specificat niciodată un interval de înlocuire pentru lanțul N47 — pragurile din comunitate sunt prevenție, nu specificație de fabrică.'},
 
   {t:'Rateuri de aprindere (P0300–P0304)', tags:'rateuri misfire p0300 p0301 bujii bobine trepidatii', sev:'red',
    quick:'Dacă martorul CLIPEȘTE, oprește. Combustibilul nears topește catalizatorul în câteva minute.',
@@ -4047,14 +4225,20 @@ const REFERENCE_DB = [
     {k:'56a / 56b', v:'Fază lungă / fază scurtă', n:'Standardul pentru circuitele de iluminat.'},
     {k:'49 / 49a', v:'Releu semnalizare', n:'49 = intrare, 49a = ieșire spre lămpi.'},
   ]},
-  {key:'culori', title:'Coduri de culori pentru cabluri', note:'Convenția europeană uzuală. NU este garantată pe orice model — verifică întotdeauna cu multimetrul înainte de a tăia sau conecta un fir.', rows:[
-    {k:'Roșu', v:'Plus permanent (borna 30)', n:'Adesea cu secțiune mare. Se lucrează doar cu bateria deconectată.'},
-    {k:'Maro', v:'Masă (borna 31)', n:'Convenția cea mai constantă între producători europeni.'},
-    {k:'Negru', v:'Plus comutat (borna 15)', n:'Atenție: în convenția americană negrul este masă — exact invers.'},
-    {k:'Galben-verde', v:'Masă de siguranță / airbag', n:'Conectorii galbeni indică circuite de airbag — nu se manipulează cu bateria conectată.'},
-    {k:'Alb-negru / dungi', v:'Semnal', n:'Culoarea de bază plus dunga identifică circuitul individual.'},
-    {k:'Verde-portocaliu răsucite', v:'Magistrală CAN', n:'Perechea răsucită se recunoaște imediat vizual.'},
-    {k:'Regulă practică', v:'Măsoară, nu presupune', n:'După o reparație anterioară, culorile pot fi orice. Multimetrul e singura sursă de adevăr.'},
+  {key:'culori', title:'Cabluri — cum identifici un fir fără să te bazezi pe culoare', note:'Culorile ajută la orientare, dar nu sunt un standard universal. Diferă între producători, se schimbă între generații, și după orice reparație anterioară pot fi orice. Metoda de mai jos funcționează pe orice mașină.', rows:[
+    {k:'Convenția germană (VAG, Mercedes, în general)', v:'Maro = masă · Roșu = plus permanent · Negru = plus comutat', n:'Cea mai constantă convenție europeană. Maro pentru masă e aproape universal la mașinile germane.'},
+    {k:'Capcana cea mai costisitoare', v:'Negrul e invers față de convenția americană', n:'În schemele americane negru = masă. În cele germane, negru = plus comutat. Confuzia asta arde module. Verifică întotdeauna cu multimetrul înainte de a conecta ceva.'},
+    {k:'BMW nu urmează schema VAG', v:'Convenție proprie', n:'Maro = masă rămâne valabil ca practică germană generală, dar restul codificării diferă. Nu aplica un tabel VAG pe un BMW.'},
+    {k:'Francezele (Renault, PSA)', v:'Numărul contează mai mult decât culoarea', n:'Firele au marcaje numerice tipărite pe izolație. În schemele oficiale, circuitul se identifică după acel număr, nu după nuanță. Este cea mai fiabilă cale la aceste mărci.'},
+    {k:'Abrevierile franceze', v:'Două litere din numele francez', n:'NO = noir, RG = rouge, VE = vert, JA = jaune, MA = marron și așa mai departe. Nu ghici echivalența — legenda schemei modelului o dă explicit.'},
+    {k:'Galben-verde și conectori galbeni', v:'Airbag — nu se ating sub tensiune', n:'Singura culoare cu semnificație de siguranță constantă. Deconectează bateria și așteaptă 15 minute înainte de orice intervenție în zonă.'},
+    {k:'CAN — identificare fizică, nu cromatică', v:'Pereche răsucită', n:'Cea mai sigură identificare: două fire împletite între ele. La VAG sunt portocalii cu dungă, dar perechea diferă între magistrale (propulsie, confort, infotainment) — nu te baza pe o singură mapare.'},
+    {k:'Confirmarea CAN cu multimetrul', v:'~60Ω între cele două fire', n:'Cu contactul luat. Este verificarea obiectivă, valabilă pe orice marcă, indiferent de culoare.'},
+    {k:'Metoda universală, pasul 1', v:'Identifică masa', n:'Multimetru pe tensiune continuă: vârful negru pe caroserie curată, roșul pe fir. Masa arată 0V față de caroserie și continuitate directă la borna negativă.'},
+    {k:'Pasul 2', v:'Separă permanentul de comutat', n:'Măsoară cu contactul luat, apoi cu contactul pus. Firul care are 12V în ambele situații e permanent; cel care apare doar cu contactul pus e comutat.'},
+    {k:'Pasul 3', v:'Recunoaște un fir de semnal', n:'Semnalele stau tipic sub 5V și variază. Dacă tensiunea se schimbă când acționezi componenta, ai găsit firul de semnal, nu unul de alimentare.'},
+    {k:'Regula finală', v:'Măsoară, nu presupune', n:'După o reparație anterioară făcută prost, culorile pot fi complet inversate. Multimetrul e singura sursă de adevăr pe mașina din fața ta.'},
+    {k:'Înainte de a tăia orice fir', v:'Fotografiază și notează', n:'O fotografie clară a conectorului înainte de intervenție a salvat mai multe cablaje decât orice schemă.'}
   ]},
   {key:'simboluri', title:'Simboluri din schemele electrice', note:'Legenda necesară pentru a citi orice schemă oficială de service.', rows:[
     {k:'Cerc cu M', v:'Motor electric', n:'Ștergătoare, geamuri, ventilator, pompă.'},
@@ -4152,17 +4336,153 @@ const REFERENCE_DB = [
     {k:'3. Verificare la reprezentanță', v:'Gratuită, după VIN', n:'Orice reprezentanță a mărcii poate verifica dacă vehiculul tău are o campanie deschisă. Remedierea unei rechemări de siguranță este gratuită, indiferent de vârsta mașinii sau de câți proprietari a avut.'},
     {k:'4. Autoritatea națională', v:'RAR în România', n:'Registrul Auto Român gestionează campaniile de rechemare pe teritoriul național.'},
     {k:'Diferența față de NHTSA', v:'Piețe diferite, campanii diferite', n:'Același model poate avea o campanie în SUA și niciuna în Europa, sau invers — configurațiile și normele diferă.'},
-    {k:'KBA (Germania)', v:'Sursa cea mai detaliată', n:'Autoritatea germană publică analize pe model mai amănunțite decât media europeană, utile pentru vehiculele importate din Germania.'},
+    {k:'KBA (Germania)', v:'kba.de → Rückrufdatenbank', n:'Autoritatea germană are o bază de rechemări proprie, cu export CSV/Excel, actualizată și cu căutare pe mai multe modele simultan. Cea mai utilă sursă pentru mașinile importate din Germania.'},
     {k:'Rechemare ≠ defect la mașina ta', v:'Este preventivă', n:'O campanie vizează un lot; exemplarul tău poate fi neafectat. Verificarea după VIN este singura care spune sigur.'}
   ]},
   {key:'opendata', title:'Baze de date deschise pe care le poți consulta singur', note:'Surse oficiale, gratuite, fără cont. Utile când vrei să verifici ceva independent de acest program.', rows:[
     {k:'NHTSA vPIC (SUA)', v:'vpic.nhtsa.dot.gov/api', n:'Catalog de vehicule alimentat de producători. Decodare VIN cu marcă, model, an, motorizare, uzină. Domeniu public. Integrat în acest program, la ecranul VIN.'},
     {k:'NHTSA Recalls (SUA)', v:'api.nhtsa.gov/recalls', n:'Campanii de rechemare din 1966 până azi, cu descriere, consecință și remediu. Integrat aici.'},
     {k:'EU Safety Gate', v:'ec.europa.eu/rapex', n:'Rechemări europene, 31 de țări, actualizat săptămânal. Căutare după numărul de omologare. Licență CC BY 4.0.'},
+    {k:'TÜV Report / ADAC', v:'Statistici publice anuale', n:'Rate de defecte pe model din ~9,5 milioane de inspecții și ~3,7 milioane de depanări. Rezumatele sunt publice și gratuite; raportul complet apare ca publicație separată, în germană.'},
     {k:'OpenStreetMap / Overpass', v:'overpass-api.de — gratuit, fără cheie', n:'Hartă colaborativă mondială, licență ODbL. Integrat aici pentru găsirea de service, vulcanizări, magazine de piese, stații ITP și benzinării. Datele sunt introduse de voluntari — sună înainte de a te deplasa.'},
     {k:'RDW Open Data (NL)', v:'opendata.rdw.nl', n:'Autoritatea olandeză publică sub licență CC-0 date tehnice de vehicule, istoric de inspecții tehnice și catalogul defectelor constatate. Multe modele sunt identice cu cele din România.'},
     {k:'RAR (România)', v:'rar.ro', n:'Registrul Auto Român: omologări, ITP, campanii de rechemare pe teritoriul național.'},
     {k:'Ce NU este deschis', v:'Datele de service pe model', n:'Scheme electrice, proceduri de reparație, timpi normați și cataloage de piese sunt licențiate (ALLDATA, Autodata, HaynesPro, TecDoc). Nu există echivalent gratuit legal.'}
+  ]},
+  {key:'elm327', title:'Adaptoare ELM327 — versiuni, clone și ce cumperi de fapt', note:'ELM327 este un firmware pentru microcontroler, dezvoltat de Elm Electronics (Canada). Firma s-a închis la mijlocul lui 2022, deci cipuri autentice noi nu se mai produc. Practic tot ce se vinde ieftin astăzi este clonă.', rows:[
+    {k:'Versiuni autentice Elm', v:'1.0 · 1.0a · 1.1 · 1.2 · 1.2a · 1.3 · 1.3a · 1.4 · 1.4b · 2.0 · 2.1 · 2.2 · 2.3', n:'Aceasta este lista completă. Orice altă versiune afișată pe carcasă sau raportată de adaptor este invenție de marketing.'},
+    {k:'„v1.5” — semnalul clar', v:'Nu a existat niciodată la Elm', n:'În 2010, clonele au copiat firmware-ul v1.4b și l-au etichetat v1.5. Este cea mai răspândită clonă și, paradoxal, adesea una dintre cele mai utilizabile — dar autentică nu este.'},
+    {k:'„v2.1” — nuanța importantă', v:'A existat la Elm, dar aproape sigur nu al tău', n:'Elm chiar a lansat v2.1, cu îmbunătățiri pe CAN. Însă adaptoarele ieftine etichetate v2.1 sunt clone de generație v1.5 cu numărul de versiune crescut ca să pară mai noi.'},
+    {k:'„v2.3”, „v2.4” pe adaptoare de 50 lei', v:'Marketing', n:'v2.3 a existat ca ultim firmware Elm, dar costa singur cât un adaptor clonă întreg. Pe produse foarte ieftine, eticheta nu înseamnă nimic.'},
+    {k:'Anunțuri „Software V2.1 / Hardware V1.5”', v:'Contradicție în termeni', n:'Formulare frecventă în magazinele online. Nu descrie nimic real — e doar combinația a două etichete populare.'},
+    {k:'Ce cip are înăuntru', v:'Contează mai mult decât versiunea', n:'Originalul folosea PIC18F2480. Clonele bune folosesc PIC18F25K80. Cele problematice folosesc STM8/STM32 cu firmware rescris, care se comportă diferit pe unele protocoale.'},
+    {k:'Test rapid de identificare', v:'ATI, apoi ATDP, apoi 0100', n:'ATI dă versiunea raportată (nu neapărat cea reală), ATDP protocolul detectat, 0100 lista de PID-uri. Dacă 0100 nu răspunde, adaptorul nu a stabilit comunicația.'},
+    {k:'Verificare mai serioasă', v:'Aplicații de identificare a clonelor', n:'Există utilitare dedicate care interoghează adaptorul și estimează dacă firmware-ul e autentic. Merită rulate înainte de a te baza pe adaptor pentru ceva important.'},
+    {k:'Unde clonele chiar eșuează', v:'Software care cere conformitate strictă', n:'FORScan (Ford), BimmerCode/BimmerLink (BMW) și alte aplicații avansate cer adaptoare verificate. Pentru citit coduri și date live, o clonă bună e suficientă.'},
+    {k:'Alternativa serioasă', v:'Cipuri STN (ScanTool/OBDLink)', n:'Nu sunt ELM327, ci implementări superioare compatibile cu setul de comenzi. Costă de câteva ori mai mult și rezolvă exact problemele clonelor.'},
+    {k:'Protocoale problematice', v:'ISO 9141 și KWP cu inițializare lentă', n:'Clonele ieftine eșuează cel mai des pe vehiculele europene de dinainte de ~2006, care folosesc aceste protocoale.'},
+    {k:'Consum în repaus', v:'Scoate-l din priză', n:'Doar adaptoarele cu mod de repaus verificat pot rămâne conectate. Cele generice consumă continuu și îți descarcă bateria în 1–2 săptămâni.'},
+    {k:'Bluetooth vs Wi-Fi vs USB', v:'Wi-Fi e cel mai capricios', n:'Bluetooth clasic merge bine pe Android. Wi-Fi cere schimbarea rețelei telefonului și pierzi internetul. USB e cel mai stabil, dar cere cablu OTG.'},
+    {k:'iPhone', v:'Doar Bluetooth LE sau Wi-Fi', n:'iOS nu acceptă Bluetooth clasic pentru aceste adaptoare. Verifică explicit compatibilitatea iOS înainte de cumpărare.'},
+    {k:'Ce NU poate niciun ELM327', v:'Module non-motor', n:'Citește sistemul de emisii: motor și transmisie. ABS, airbag, climatizare, imobilizator cer un tester dedicat mărcii, indiferent de versiune.'},
+    {k:'Ce poate, totuși, foarte bine', v:'Coduri, date live, freeze frame, monitoare', n:'Pentru diagnoza de motor și verificarea pregătirii pentru ITP, un adaptor de 50 de lei plus o aplicație bună acoperă surprinzător de mult.'}
+  ]},
+  {key:'baze_verificate', title:'Baze de date deschise pentru coduri — ce e utilizabil', note:'Am verificat sursele frecvent recomandate. Nu toate sunt ce par, iar licența contează la fel de mult ca volumul.', rows:[
+    {k:'OBDb (obdb.community)', v:'CC BY-SA 4.0 — utilizabil cu condiții', n:'Comunitate activă, actualizat zilnic, documentează parametri și coduri pe marcă și model. Fiind copyleft, orice text preluat obligă redistribuirea aceleiași părți sub CC BY-SA. Merită consultat direct.'},
+    {k:'OBDII.DTC (MIT)', v:'Licență permisivă', n:'Câteva mii de coduri generice cu descrieri, sub licență MIT. Datele sunt însă structurate pentru .NET și în engleză.'},
+    {k:'Depozite cu „mii de coduri de producător”', v:'Tratează-le cu suspiciune', n:'Nicio sursă publică nu deține legitim zeci de mii de definiții proprietare. Multe astfel de baze sunt compilate din site-uri comerciale, fără licență și fără verificare.'},
+    {k:'Liste care trimit la site-uri comerciale', v:'Semnal de alarmă', n:'Dacă un depozit „gratuit” te trimite la un site plătit pentru „informații complete”, datele provin probabil de acolo.'},
+    {k:'De ce nu am importat masiv', v:'Un cod greșit costă o piesă bună', n:'621 de coduri verificate, în română, cu gravitate și note din practică, sunt mai utile decât 28.000 traduse automat din surse neverificate. Pentru codurile care lipsesc, programul decodează structura după SAE J2012 și îți spune unde să cauți definiția exactă.'},
+    {k:'FuseLayouts, FuseBoxInfo și similare', v:'Conținut protejat', n:'Schemele de siguranțe pe model sunt proprietatea acestor site-uri sau a producătorilor. Se consultă direct, nu se copiază.'},
+    {k:'Haynes, Chilton, ALLDATA, TecDoc', v:'Licențiate contra cost', n:'Cupluri de strângere, timpi normați și cataloage de piese. Nu există echivalent gratuit legal.'}
+  ]},
+  {key:'tsb_expl', title:'Buletine tehnice (TSB) — cum le folosești', note:'Cea mai subutilizată sursă gratuită de informație tehnică. Publice în SUA din 2015, după un mandat al Congresului.', rows:[
+    {k:'Ce este un TSB', v:'Comunicare fabrică → dealer', n:'„Această problemă apare pe modelul X, cauza este Y, procedura de reparație este Z.” Scris de inginerii producătorului, nu de un forum.'},
+    {k:'De ce contează', v:'Un cod generic poate ascunde un TSB', n:'Scanerul îți dă P0171. TSB-ul poate spune că exact pe motorul tău garnitura galeriei se degradează și există o piesă revizuită. Diferența dintre a ghici și a ști.'},
+    {k:'TSB ≠ rechemare', v:'Reparația nu e automat gratuită', n:'Rechemarea vizează siguranța și e gratuită oricând. TSB-ul e o procedură; poate fi acoperit de garanție sau de o extindere de garanție, dar nu obligatoriu.'},
+    {k:'Cum îl folosești la service', v:'Ca argument, nu ca pretenție', n:'„Există buletinul numărul X care descrie exact acest simptom, cu soluția Y.” Un service serios îl verifică imediat.'},
+    {k:'Unde le găsești gratuit', v:'nhtsa.gov/recalls → Manufacturer Communications', n:'Introdu an, marcă, model. Nu e nevoie de VIN. Buletinele complete sunt în PDF.'},
+    {k:'Limita geografică', v:'Baza acoperă piața din SUA', n:'Un model european identic poate avea buletine proprii, netranspuse. Verifică și la reprezentanța locală a mărcii.'},
+    {k:'„Garanție secretă”', v:'Extinderi de garanție nepublicate', n:'Unii producători extind garanția pentru defecte cunoscute fără să anunțe public. TSB-ul e adesea singura urmă scrisă.'},
+    {k:'Înainte de 2012', v:'Acoperire incompletă', n:'Buletinele mai vechi pot lipsi din bază sau perioada de acoperire să fi expirat.'}
+  ]},
+  {key:'kba', title:'KBA — rechemări europene și identificare exactă (import german)', note:'Kraftfahrt-Bundesamt este autoritatea germană de omologare. Contează pentru România pentru că o mare parte din parcul rulat provine din Germania, iar omologarea germană (e1) acoperă o felie uriașă din flota europeană.', rows:[
+    {k:'Baza de rechemări (RRDB)', v:'kba.de → Marktüberwachung → Rückrufdatenbank', n:'Relansată în martie 2025. Conține mărcile și modelele afectate, defectul constatat și măsura de remediere. Acoperă rechemările din competența KBA.'},
+    {k:'Ce o face utilă', v:'Export CSV și Excel', n:'Spre deosebire de multe baze oficiale, rezultatele căutării se pot descărca în format prelucrabil. Se pot căuta mai multe modele simultan.'},
+    {k:'De ce contează pentru România', v:'Import german masiv', n:'Dacă mașina ta a fost înmatriculată prima dată în Germania, campaniile KBA o vizează direct — chiar dacă acum e pe numere românești.'},
+    {k:'HSN (câmpul 2.1 din Fahrzeugschein)', v:'Cod producător, 4 cifre', n:'Identifică fabricantul. Ex: 0603 = Honda, 0588 = Toyota, 0005 = BMW. Se păstrează pe documentele germane vechi ale mașinii.'},
+    {k:'TSN (câmpul 2.2)', v:'Cod tip, 3 caractere', n:'Identifică varianta exactă: caroserie, motorizare, echipare. Perechea HSN/TSN este cel mai precis identificator de variantă din Europa.'},
+    {k:'La ce folosesc practic', v:'Piese care se potrivesc din prima', n:'Cataloagele de piese europene acceptă HSN/TSN și returnează exact referințele corecte. Elimină ghicitul între variante de motorizare.'},
+    {k:'HSN/TSN ≠ număr de omologare UE', v:'Două sisteme diferite', n:'HSN/TSN este sistemul german de identificare a variantei. Numărul de omologare (e1*2007/46*0172, câmpul K din talonul românesc) este identificatorul european al tipului. Nu se confundă.'},
+    {k:'Dacă ai doar talonul românesc', v:'Caută după marcă, model și an', n:'Baza KBA permite căutarea și fără HSN/TSN. Documentele germane originale, dacă le ai de la vânzător, îți dau precizia maximă.'},
+    {k:'Limba', v:'Interfață în germană și engleză', n:'Site-ul KBA are versiune engleză. Denumirile defectelor sunt tehnice și se traduc ușor.'},
+    {k:'Ce NU găsești acolo', v:'Proceduri de reparație', n:'Baza spune ce defect există și care e măsura de remediere, nu cum se execută. Pentru asta rămâne documentația mărcii.'}
+  ]},
+  {key:'pe_masina', title:'Date pe model — sunt deja pe mașina ta', note:'Pentru cele mai căutate date specifice modelului, sursa autoritativă nu e o bază de date, ci vehiculul însuși. E mai exactă decât orice copie, pentru că se potrivește exact variantei tale.', rows:[
+    {k:'Presiune anvelope', v:'Plăcuța din montantul ușii șofer', n:'Uneori pe clapeta rezervorului sau în torpedou. Conține presiunea față/spate, la sarcină normală și completă, plus dimensiunea OEM. Nicio bază de date nu bate plăcuța de pe mașina ta.'},
+    {k:'Dimensiune anvelope OEM', v:'Aceeași plăcuță', n:'Include și dimensiunile alternative omologate. Valoarea de pe flancul anvelopei montate arată ce e montat acum, nu neapărat ce e corect.'},
+    {k:'Schema siguranțelor', v:'Pe capacul cutiei de siguranțe', n:'Aproape toate mașinile au diagrama tipărită pe interiorul capacului sau pe o etichetă lipită. Include amperajul și funcția protejată. Manualul de utilizare o repetă, cu explicații.'},
+    {k:'Capacități de fluide', v:'Manualul de utilizare, secțiunea date tehnice', n:'Pentru ulei de motor, jojă și procedura de completare sunt mai sigure decât o cifră dintr-un tabel: contează și cât a rămas în circuit după golire.'},
+    {k:'Norma de ulei cerută', v:'Capacul de umplere sau manualul', n:'Multe capace au norma ștanțată direct (ex. VW 504.00). Este cerința care contează — mai mult decât vâscozitatea.'},
+    {k:'Intervale de service', v:'Manualul + indicatorul din bord', n:'Mașinile moderne calculează intervalul după utilizare reală, nu după kilometri ficși. Un tabel generic poate să te trimită prea târziu sau prea devreme.'},
+    {k:'Cod motor', v:'Talon, câmpul P.5', n:'Cel mai precis identificator pentru piese și diagnoză. Îl ai deja pe hârtie.'},
+    {k:'Număr de omologare', v:'Talon, câmpul K', n:'Cheia pentru căutarea rechemărilor europene.'},
+    {k:'Cupluri de strângere', v:'Manualul de service al modelului', n:'Pentru chiulasă, roți, suspensie și frânare NU se aproximează. Valorile generice de mai jos sunt orientative pentru șuruburi obișnuite, nu pentru elemente critice.'},
+    {k:'De ce nu am copiat aceste date', v:'O copie e mai proastă decât originalul', n:'Ar fi neactualizată, incompletă pe variante și, la elemente critice, periculoasă. Plus că sunt licențiate comercial. Prefer să-ți spun unde e sursa exactă.'}
+  ]},
+  {key:'cupluri', title:'Cupluri de strângere — valori generice după filet', note:'Valori orientative pentru șuruburi de oțel, filet metric standard, uscat, conform practicii inginerești uzuale. NU se aplică la chiulasă, roți, suspensie sau frânare — acolo se folosesc exclusiv valorile din manualul modelului.', rows:[
+    {k:'M6 · clasa 8.8', v:'~10 Nm', n:'Clasa 10.9: ~14 Nm. Șuruburi mici de capace și suporturi.'},
+    {k:'M8 · clasa 8.8', v:'~25 Nm', n:'Clasa 10.9: ~35 Nm. Cel mai frecvent filet la accesorii de motor.'},
+    {k:'M10 · clasa 8.8', v:'~50 Nm', n:'Clasa 10.9: ~70 Nm.'},
+    {k:'M12 · clasa 8.8', v:'~85 Nm', n:'Clasa 10.9: ~120 Nm.'},
+    {k:'M14 · clasa 8.8', v:'~135 Nm', n:'Clasa 10.9: ~190 Nm.'},
+    {k:'M16 · clasa 8.8', v:'~210 Nm', n:'Clasa 10.9: ~295 Nm.'},
+    {k:'Unde scrie clasa', v:'Ștanțat pe capul șurubului', n:'„8.8”, „10.9”, „12.9”. Un șurub 10.9 înlocuit cu 8.8 la același cuplu se poate rupe.'},
+    {k:'Filet uns vs uscat', v:'Uns cere cuplu mai mic', n:'Ungerea reduce frecarea; același cuplu produce o tensiune mult mai mare în șurub. Dacă manualul nu specifică „uns”, se strânge uscat.'},
+    {k:'Șuruburi cu strângere unghiulară', v:'Nu se refolosesc', n:'Chiulasă, biele, roți la unele modele: se strâng la un cuplu de bază plus un unghi. Se deformează plastic și se înlocuiesc obligatoriu.'},
+    {k:'Roți — ordinea de strângere', v:'În cruce, în două treceri', n:'Prima trecere la jumătate de cuplu, a doua la valoarea finală. Mașina coborâtă pe roți la strângerea finală.'},
+    {k:'Roți — valoarea', v:'Din manual; tipic 110–140 Nm', n:'Variază cu diametrul prezonului și cu tipul jantei. Strâns „cât poți” deformează discul de frână.'},
+    {k:'Verificare după montaj', v:'Reverifică roțile după ~50 km', n:'Practică standard după orice schimbare de roți.'}
+  ]},
+  {key:'distributie', title:'Distribuție — ce trebuie să știi înainte de intervenție', note:'Cea mai costisitoare greșeală posibilă la o mașină. Această secțiune nu conține cupluri sau numere de scule pe model — acelea se iau exclusiv din documentația producătorului. Conține principiile care se aplică oricărui motor.', rows:[
+    {k:'Curea vs lanț — diferența reală', v:'Curea = interval fix. Lanț = până cedează', n:'Cureaua are interval de înlocuire declarat. Lanțul e proiectat „pe viață”, ceea ce în practică înseamnă că nu are interval — se schimbă când dă semne sau când e prea târziu.'},
+    {k:'„Lanț pe viață” — cum se citește', v:'Viața garanției, nu a motorului', n:'Pe motoarele cu lanț problematic (1.4 TSI EA111, BMW N47, 1.6 THP), comunitatea a stabilit praguri proprii de prevenție. Sunt euristici utile, nu specificații de fabrică — nu le confunda.'},
+    {k:'Vârsta contează cât kilometrajul', v:'Cauciucul îmbătrânește și nefolosit', n:'O curea la 5–7 ani se schimbă chiar dacă mașina a stat. Intervalul din manual are întotdeauna două limite: kilometri ȘI ani. Se aplică prima atinsă.'},
+    {k:'Intervalele se revizuiesc în jos', v:'Verifică valoarea actuală, nu cea din 2015', n:'Mai mulți producători au scurtat oficial intervalele după cedări în serie. Un tabel vechi te poate trimite mult peste limita actuală.'},
+    {k:'Ce se schimbă odată cu cureaua', v:'Role, întinzător, pompă de apă', n:'Manopera e aceeași. A schimba doar cureaua și a lăsa o pompă de apă la 200.000 km înseamnă a repeta lucrarea peste un an, cu riscul ca pompa să blocheze cureaua între timp.'},
+    {k:'Sculele de calare nu sunt opționale', v:'Fără ele, lucrarea e o loterie', n:'Fiecare motor are pini și cale dedicate pentru arbore cotit și axe cu came. Improvizația cu marcaje cu vopsea funcționează până nu funcționează, iar atunci supapele ating pistoanele.'},
+    {k:'Șuruburi cu strângere unghiulară', v:'Se înlocuiesc întotdeauna', n:'Șurubul de fulie și cele de pinioane se deformează plastic la montaj. Refolosite, se pot rupe în arbore — o reparație mult mai scumpă decât motorul deschis.'},
+    {k:'Verificarea obligatorie după montaj', v:'Două rotații complete, cu mâna', n:'Se rotește arborele cotit două ture în sensul normal, apoi se verifică din nou marcajele. Dacă ceva nu revine la loc, se oprește acolo — nu se pornește motorul.'},
+    {k:'Confirmarea electronică', v:'Valori de corelație cu testerul', n:'După montaj, se citește abaterea arbore cotit / axe cu came. E singura verificare obiectivă că distribuția e la locul ei.'},
+    {k:'Semnele că lanțul e întins', v:'Zornăit 2–3 secunde la pornirea la rece', n:'Plus coduri P0016/P0017 (corelație). Lanțul nu dă avertismente progresive — sare brusc.'},
+    {k:'Ce întrebi la service înainte', v:'Trei întrebări care spun tot', n:'„Folosiți sculele de calare originale pentru motorul acesta?”, „Schimbați și pompa de apă și rolele?”, „Verificați valorile de corelație cu testerul după montaj?” Un atelier serios răspunde imediat la toate trei.'},
+    {k:'De unde iei valorile exacte', v:'Documentația modelului tău', n:'Cuplurile, unghiurile și numerele de scule sunt specifice motorului și anului, se revizuiesc, și sunt publicate doar de producător. Un atelier fără acces la ele nu ar trebui să facă lucrarea.'},
+    {k:'De ce nu găsești aici cifre pe model', v:'Riscul nu justifică aproximarea', n:'O cifră neverificată la distribuție nu costă o piesă, ci motorul — sau siguranța în mers, dacă fulia se desface la viteză. Prefer să lipsească decât să fie greșită.'}
+  ]},
+  {key:'epb', title:'Frână de mână electrică (EPB) — de ce nu se improvizează', note:'Cea mai frecventă intervenție la care oamenii încearcă să evite testerul, și una dintre puținele unde consecința e de siguranță, nu de bani.', rows:[
+    {k:'De ce e diferită de frâna clasică', v:'Pistonul e împins de un motor cu șurub', n:'Nu se retrage apăsând cu o presă, ca la un etrier obișnuit. Un motoraș rotește un ax filetat care avansează pistonul. Forțat mecanic, distrugi filetul.'},
+    {k:'Modul service — pasul obligatoriu', v:'Retrage actuatorul și anunță modulul', n:'Comanda de service retrage șurubul complet și pune sistemul în starea în care se pot schimba plăcuțele. Fără ea, nu ai spațiu și modulul nu știe ce s-a întâmplat.'},
+    {k:'Verifică întâi în mașină', v:'Multe modele au modul service în meniu', n:'O parte dintre mașinile moderne au procedura în meniul de bord sau infotainment, fără niciun tester. Merită căutată acolo înainte de a improviza sau de a plăti.'},
+    {k:'Ce se strică dacă forțezi', v:'Șurub, motoraș, etrier', n:'Rotirea axului în sens greșit îl împinge în opritor. Rezultatul e un etrier nou, care costă de câteva ori mai mult decât intervenția la un service cu tester.'},
+    {k:'Sensul de rotație nu e universal', v:'Diferă între producători și uneori între părți', n:'Procedurile găsite pe internet care dau un sens unic pentru toate mașinile sunt periculoase. Etrierele stânga și dreapta pot fi în oglindă.'},
+    {k:'Recalibrarea după intervenție', v:'Obligatorie, indiferent de metodă', n:'Modulul trebuie să reînvețe poziția de repaus și cursa. Sărită, frâna poate strânge insuficient — mașina pleacă de pe pantă — sau poate rămâne parțial acționată și supraîncălzi plăcuțele.'},
+    {k:'De ce improvizația nu scapă de tester', v:'Recalibrarea tot îl cere', n:'Chiar dacă retragi mecanic actuatorul, sistemul rămâne necalibrat. Ai făcut munca grea și tot ai nevoie de tester la final.'},
+    {k:'Testul final, obligatoriu', v:'Pe o pantă, cu mașina goală și încărcată', n:'După orice lucrare la EPB: verifică pe o rampă că ține, de mai multe ori. Este singura confirmare că funcționează.'},
+    {k:'Coduri asociate', v:'C1100, C1101, U0128', n:'C1101 înseamnă exact „necesită modul de service”. Nu e defect — e sistemul care îți spune procedura corectă.'},
+    {k:'Concluzia onestă', v:'Dacă nu ai tester, aceasta e lucrarea de plătit', n:'Multe intervenții se pot face acasă cu răbdare. Aceasta nu: e sistem de frânare, cu recalibrare obligatorie și cu piese scumpe dacă greșești sensul.'}
+  ]},
+  {key:'resetari_manual', title:'Resetări din bord — ce se poate face fără tester', note:'O parte dintre resetări sunt accesibile din butoanele mașinii. Procedura exactă diferă după model, an și tipul de ceasuri — se ia din manualul de utilizare, care e exact pentru varianta ta.', rows:[
+    {k:'Indicator de service / ulei', v:'Aproape întotdeauna posibil din bord', n:'Tiparul general: cu contactul luat se ține apăsat butonul de kilometraj zilnic sau SET, se pune contactul fără a porni, se confirmă. Detaliile diferă — manualul le are.'},
+    {k:'La mașinile cu infotainment', v:'Caută în meniul Service sau Vehicul', n:'Pe modelele recente, resetarea s-a mutat din butoane în meniul ecranului central. Acolo e și mai simplă.'},
+    {k:'Reînvățare TPMS', v:'Adesea un buton sau o opțiune de meniu', n:'La sistemele indirecte (fără senzori în roți), resetarea se face după ce ai pus presiunea corectă la rece. La cele cu senzori, roțile noi pot cere declarare cu un tester dedicat.'},
+    {k:'Ce NU se resetează din bord', v:'Adaptări, codări, calibrări', n:'Adaptarea clapetei, calibrarea senzorului de unghi volan, codificarea injectoarelor, modul service EPB — toate cer tester.'},
+    {k:'Avertismentul care contează', v:'Resetarea nu înlocuiește lucrarea', n:'A reseta indicatorul fără a face schimbul de ulei înseamnă doar a-ți ascunde ție intervalul real. La revânzare, istoricul electronic al mașinii spune adevărul oricum.'},
+    {k:'După ștergerea codurilor', v:'Monitoarele rămân „not ready”', n:'Mașina are nevoie de un ciclu complet de conducere ca să-și refacă autotestele. Până atunci, ITP-ul poate fi respins chiar fără niciun defect real.'}
+  ]},
+  {key:'fiabilitate', title:'Statistici de fiabilitate — TÜV și ADAC', note:'Două rapoarte germane anuale, bazate pe volume care fac cifrele credibile. Relevante direct pentru România, unde o mare parte din parcul rulat provine din Germania.', rows:[
+    {k:'TÜV Report', v:'~9,5 milioane de inspecții tehnice pe an', n:'Măsoară procentul de vehicule respinse la inspecție, defalcat pe model și pe grupă de vârstă. Ediția din noiembrie 2025 acoperă perioada precedentă.'},
+    {k:'ADAC Pannenstatistik', v:'~3,7 milioane de intervenții rutiere', n:'Cel mai mare club auto din Europa înregistrează fiecare depanare. Indicele se calculează ca depanări la 1.000 de vehicule înmatriculate, pe 158 de serii de la 27 de producători.'},
+    {k:'Ce măsoară fiecare — diferența', v:'Defecte la inspecție vs pene în trafic', n:'TÜV arată starea tehnică la control, care depinde și de cât de bine a fost întreținută mașina. ADAC arată cât de des te lasă efectiv pe drum. Un model poate ieși bine la unul și slab la celălalt.'},
+    {k:'Rata generală de respingere', v:'~21,5% defecte semnificative sau periculoase', n:'Aproximativ una din cinci mașini nu primește viza din prima. Procentul a crescut ușor față de anul precedent.'},
+    {k:'Vârsta e factorul dominant', v:'~6% la 2–3 ani → ~28% la 12–13 ani', n:'Rata de defecte crește puternic cu vechimea. La cumpărarea unei mașini de peste 10 ani, verificarea pe elevator nu e opțională.'},
+    {k:'Cele mai frecvente cauze de „periculos”', v:'Frâne, direcție, coroziune structurală', n:'Peste 15.000 de vehicule au fost scoase din circulație într-un singur ciclu de raportare din aceste motive. Sunt exact zonele de verificat la o rulată.'},
+    {k:'Vârful clasamentului', v:'Mazda 2, Mercedes Clasa B, VW T-Roc', n:'În ediția 2026, cu rate de defecte în jur de 3% la categoria 2–3 ani.'},
+    {k:'Electricele — imaginea reală', v:'Majoritatea la fel de fiabile ca termicele', n:'Fiat 500e, BMW i3 și Mini Cooper SE s-au clasat între cele mai bune. Excepțiile notabile au fost modelele Tesla, cu Model Y pe ultimul loc la categoria 2–3 ani.'},
+    {k:'De ce cedează electricele când cedează', v:'Suspensie și frâne, nu propulsie', n:'Explicația dată de TÜV: masa mare a bateriei solicită suspensia, iar frânarea regenerativă face ca frânele de fricțiune să fie rar folosite. Discurile ruginesc și performanța de frânare poate scădea.'},
+    {k:'Ce NU spun aceste cifre', v:'Nu prezic exemplarul din fața ta', n:'Sunt medii pe model. O mașină întreținută prost dintr-un model bun e mai riscantă decât una îngrijită dintr-un model mediocru. Folosește-le ca semnal, nu ca verdict.'},
+    {k:'Cum le folosești practic', v:'Ca listă de verificat, nu ca listă de evitat', n:'Dacă un model iese slab la un anumit capitol, verifică exact acel capitol la exemplarul pe care îl cumperi.'},
+    {k:'Unde le găsești', v:'tuev-nord.de, tuv.com, adac.de', n:'Rezumatele anuale sunt publice și gratuite. Raportul complet AutoBild TÜV apare ca publicație separată, în germană.'}
+  ]},
+  {key:'electric_intretinere', title:'Electrice și hibride — întreținerea care se uită', note:'Mașinile electrice au mai puține piese în mișcare, dar problemele lor sunt altele decât la termice. Statisticile TÜV le confirmă an de an.', rows:[
+    {k:'Frânele — problema numărul unu', v:'Se folosesc prea puțin', n:'Frânarea regenerativă face ca plăcuțele și discurile să intre rar în contact. Discurile ruginesc, plăcuțele se lipesc, iar la o frânare de urgență performanța poate fi mult sub așteptări.'},
+    {k:'Ce faci concret', v:'Frânări ferme periodice', n:'Câteva frânări puternice pe lună, în siguranță, curăță pelicula de rugină. Este cel mai simplu obicei preventiv pentru un electric.'},
+    {k:'Verificare la service', v:'Etrieri și ghidaje, nu doar grosime', n:'Plăcuțele pot avea grosime bună și totuși etrierul să fie gripat din lipsă de utilizare. Se cere curățarea și ungerea ghidajelor.'},
+    {k:'Suspensia', v:'Solicitată de masa bateriei', n:'Un electric cântărește semnificativ mai mult decât echivalentul termic. Bucșele, amortizoarele și rulmenții se uzează mai repede — verificare mai deasă.'},
+    {k:'Anvelopele', v:'Uzură accelerată', n:'Masa mare plus cuplul instantaneu consumă anvelopele mai repede. Presiunea corectă contează și mai mult decât la o mașină termică.'},
+    {k:'Bateria auxiliară de 12V', v:'Cedează mai des decât cea de tracțiune', n:'Alimentează electronica și contactoarele de înaltă tensiune. Descărcată, mașina nu pornește deloc, deși bateria mare e plină.'},
+    {k:'Ventilația bateriei de tracțiune', v:'Grila se înfundă cu praf', n:'La modelele cu răcire pe aer, aspirația e adesea în habitaclu. Curățarea periodică previne degradarea prematură a modulelor.'},
+    {k:'Lichidul de răcire al bateriei', v:'Există și se schimbă', n:'La modelele cu răcire lichidă, circuitul are propriul interval de întreținere, distinct de cel al motorului termic la hibride.'},
+    {k:'Ce rămâne identic', v:'Filtru de polen, ștergătoare, lichid de frână', n:'Lichidul de frână este higroscopic indiferent de propulsie — se schimbă la 2 ani și la un electric.'}
   ]}
 ];
 
@@ -4314,6 +4634,9 @@ const ISSUES_DB = [
   {make:'Toate mărcile', model:'orice vehicul diesel Euro 6 cu AdBlue', engine:'sisteme SCR', years:'2015+', sev:'amber',
    issue:'Cristalizare AdBlue și senzori NOx', detail:'Dozatorul se poate cristaliza la utilizare cu trasee scurte, iar senzorii NOx sunt scumpi și cedează relativ des. Sistemul poate bloca pornirea motorului când detectează defect.',
    check:'Nu lăsa rezervorul de AdBlue gol; folosește AdBlue sigilat, nu vrac vechi. Scanează P204F/P20EE/P2BAC la primele semne.'},
+  {make:'Toate mărcile', model:'orice vehicul electric sau hibrid', engine:'frânare regenerativă', years:'toate', sev:'red',
+   issue:'Discuri de frână ruginite din cauza utilizării reduse', detail:'Frânarea regenerativă face ca frânele de fricțiune să intre rar în acțiune. Discurile se acoperă cu rugină, plăcuțele se pot lipi, iar etrierii gripează din lipsă de mișcare. La o frânare de urgență, performanța poate fi mult sub cea așteptată. Statisticile TÜV identifică frânele și suspensia drept principalele puncte slabe ale electricelor, nu propulsia.',
+   check:'Câteva frânări ferme pe lună, în siguranță, curăță pelicula. La service: cere curățarea și ungerea ghidajelor etrierilor, nu doar măsurarea grosimii plăcuțelor.'},
   {make:'Toate mărcile', model:'orice vehicul cu start-stop', engine:'sisteme start-stop', years:'2010+', sev:'amber',
    issue:'Uzura demarorului și a bateriei', detail:'Start-stop-ul cere baterie AGM sau EFB. Montarea unei baterii obișnuite duce la moartea ei în luni și la solicitarea demarorului întărit.',
    check:'Când schimbi bateria: același tip (AGM/EFB) și înregistrarea ei în modulul de gestiune a energiei — altfel sistemul o va supraîncărca.'},
@@ -5667,6 +5990,13 @@ const OBD_PROTO = [
  {c:'ISO 9141-2', d:'Europa și Asia, până spre 2005', n:'Cel mai vechi protocol european uzual. Pini 7 și 15.'},
  {c:'SAE J1850 VPW', d:'General Motors', n:'Vehicule americane mai vechi. Pin 2.'},
  {c:'SAE J1850 PWM', d:'Ford', n:'Vehicule americane mai vechi. Pini 2 și 10.'},
+ {c:'ATSP0', d:'Detectare automată', n:'Alegerea sigură pentru început. Adaptorul încearcă protocoalele pe rând.'},
+ {c:'ATSP1 / ATSP2', d:'SAE J1850 PWM / VPW', n:'Ford (PWM) și General Motors (VPW), vehicule americane mai vechi.'},
+ {c:'ATSP3', d:'ISO 9141-2', n:'Europa și Asia, până spre 2005. Inițializare la 5 baud.'},
+ {c:'ATSP4 / ATSP5', d:'ISO 14230-4 (KWP)', n:'4 = inițializare lentă (5 baud), 5 = inițializare rapidă.'},
+ {c:'ATSP6 / ATSP7', d:'ISO 15765-4 CAN, 500 kbps', n:'6 = identificatori pe 11 biți, 7 = pe 29 biți. Cele mai frecvente astăzi.'},
+ {c:'ATSP8 / ATSP9', d:'ISO 15765-4 CAN, 250 kbps', n:'8 = 11 biți, 9 = 29 biți. Mai rar la autoturisme.'},
+ {c:'ATSPA / B / C', d:'SAE J1939 și variante utilitare', n:'Vehicule comerciale grele.'},
  {c:'Cum afli care e', d:'ATDP după conectare', n:'Adaptorul îți spune singur, dacă ai lăsat ATSP0 (detectare automată).'}
 ];
 
@@ -6077,6 +6407,85 @@ const DIAGRAMS = [
  ]}
 ];
 
+
+/* ==================== DECODOR STRUCTURAL DTC (SAE J2012) ====================
+   Structura codului e deterministica. Chiar daca un cod nu e in baza locala,
+   putem spune ce sistem si ce subsistem vizeaza — fara sa importam definitii
+   din surse neverificate, care ar trimite omul sa schimbe piesa gresita. */
+const DTC_SYS = {
+  P:{n:'Motor și transmisie (Powertrain)', d:'Motor, cutie de viteze, sistem de alimentare, emisii.'},
+  B:{n:'Caroserie (Body)', d:'Airbag, climatizare, iluminat, încuietori, confort — în habitaclu.'},
+  C:{n:'Șasiu (Chassis)', d:'Frânare, ABS/ESP, suspensie, direcție, presiune anvelope.'},
+  U:{n:'Rețea de comunicație (Network)', d:'Magistrale CAN/LIN și schimbul de date între module.'}
+};
+const DTC_ORIGIN = {
+  '0':{n:'Standard SAE', d:'Definiție identică pe orice vehicul OBD-II. Sensul este garantat.'},
+  '1':{n:'Specific producătorului', d:'Definit individual de fabricant. Același cod poate însemna altceva pe altă marcă sau alt an.'},
+  '2':{n:'Standard SAE (extensie)', d:'Zonă extinsă; majoritatea codurilor sunt standardizate, câteva sunt lăsate producătorului.'},
+  '3':{n:'Mixt / rezervat', d:'Parțial standardizat, parțial lăsat producătorului.'}
+};
+const DTC_SUB_P = {
+  '0':'Diagnoză generală, dozare combustibil și aer (măsurare)',
+  '1':'Dozare combustibil și aer — senzori de măsurare',
+  '2':'Dozare combustibil și aer — injectoare',
+  '3':'Sistem de aprindere și rateuri de ardere',
+  '4':'Control auxiliar al emisiilor (EGR, EVAP, catalizator, aer secundar)',
+  '5':'Viteză vehicul, ralanti și intrări auxiliare',
+  '6':'Calculator de bord și circuitele lui de ieșire',
+  '7':'Transmisie',
+  '8':'Transmisie',
+  '9':'Transmisie și module auxiliare',
+  'A':'Sisteme hibride și electrice de propulsie',
+  'B':'Sisteme hibride și electrice de propulsie',
+  'C':'Sisteme hibride și electrice de propulsie'
+};
+
+function decodeStructure(code){
+  var c = String(code||'').toUpperCase().replace(/[^0-9A-Z]/g,'');
+  if(!/^[PBCU][0-9A-F][0-9A-F]{3}$/.test(c)) return null;
+
+  var sys = DTC_SYS[c[0]];
+  var org = DTC_ORIGIN[c[1]] || {n:'Nedefinit', d:'Cifra a doua în afara intervalului uzual.'};
+  var out = [
+    {k:'Sistem vizat', v:sys.n, n:sys.d},
+    {k:'Tip de definiție', v:org.n, n:org.d}
+  ];
+  if(c[0]==='P'){
+    var sub = DTC_SUB_P[c[2]];
+    if(sub) out.push({k:'Subsistem', v:sub, n:'A treia cifră a codului indică zona funcțională afectată.'});
+  }
+  out.push({k:'Identificator de defect', v:c.slice(3),
+            n:'Ultimele două caractere identifică defectul concret în cadrul subsistemului.'});
+  return {code:c, rows:out, generic:(c[1]==='0'||c[1]==='2'), sys:c[0]};
+}
+
+function structureCard(code, extraNote){
+  var s = decodeStructure(code);
+  if(!s) return '';
+  return '<div class="xc amber open" id="st-'+s.code+'">' +
+    '<button class="xc-head" onclick="tog(\'st-'+s.code+'\')">' +
+      '<span class="xh-main"><span class="chev">▸</span><span>' +
+      '<span class="xh-t">' + esc(s.code) + ' — nu este în baza locală</span>' +
+      '<span class="xh-s">structura codului, decodată după SAE J2012</span></span></span>' +
+      '<span class="badge amber">PARȚIAL</span></button>' +
+    '<div class="xc-body">' +
+      '<div class="quote">Nu inventez o definiție pe care nu o pot verifica. Îți spun în schimb exact ce ' +
+      'se poate deduce cu certitudine din structura codului — și unde să cauți restul.</div>' +
+      s.rows.map(function(r){
+        return '<div class="rref"><div class="rk">' + esc(r.k) + '</div><div class="rv">' + esc(r.v) + '</div>' +
+               '<div class="rn">' + esc(r.n) + '</div></div>';
+      }).join('') +
+      (extraNote ? '<div class="note info" style="margin-top:12px">' + extraNote + '</div>' : '') +
+      '<div class="blk" style="margin-top:12px"><div class="blk-l ok">Unde găsești definiția exactă</div>' +
+      (s.generic
+        ? '<p>Fiind un cod standardizat SAE, orice tester sau manual OBD-II îl definește identic. ' +
+          'Caută-l ca atare — definiția nu diferă între mărci.</p>'
+        : '<p>Fiind un cod definit de producător, definiția exactă se află doar în documentația mărcii ' +
+          'sau într-un tester dedicat (VCDS, ISTA, XENTRY, CLIP, Diagbox, Techstream, GDS). ' +
+          'Nu te baza pe liste generice de pe internet: același cod poate însemna altceva pe alt model sau an.</p>') +
+      '</div></div></div>';
+}
+
 /* ==================== STATE ==================== */
 var VEH = {make:'', model:'', gen:'', engine:''};
 var selected = new Set();
@@ -6101,6 +6510,7 @@ var TITLES = {
   pid:['PID-uri și comenzi','SAE J1979 · ELM327'],
   linkuri:['Surse externe','consultare directă la sursă'],
   service:['Service în apropiere','date OpenStreetMap'],
+  tsb:['Buletine tehnice','TSB · comunicări ale producătorilor'],
   despre:['Despre și distribuire','']
 };
 var ROOTS = ['home','diag','coduri','ghid','more'];
@@ -6634,7 +7044,13 @@ function renderDtc(){
                    : pool.filter(function(o){ return (o.code+' '+o.ro+' '+o.cauze+' '+(o.make||'')+' '+(o.forum||'')).toLowerCase().indexOf(q)>-1; });
   stats.textContent = q!=='' ? res.length+' rezultate pentru „'+q+'”'
                      : (dtcFilter==='all' ? 'Cele mai frecvente · '+OBD_ALL.length+' în total' : res.length+' coduri');
-  list.innerHTML = res.length ? res.map(dtcRow).join('') : '<div class="empty">Niciun cod găsit. Verifică formatul (ex: P0301) sau caută un cuvânt cheie.</div>';
+  if(res.length){
+    list.innerHTML = res.map(dtcRow).join('');
+  } else {
+    var st = structureCard(q.toUpperCase().replace(/[^0-9A-Z]/g,''));
+    list.innerHTML = st ? st
+      : '<div class="empty">Niciun cod găsit. Verifică formatul (ex: P0301) sau caută un cuvânt cheie.</div>';
+  }
 }
 function dtcRow(o){
   return '<div class="dtc '+o.sev+'"><div class="dtc-code">'+o.code+'</div>'+
@@ -6926,6 +7342,118 @@ function goRecalls(){
   loadRecalls(mk, mo, yr);
 }
 
+
+/* ==================== TSB — buletine tehnice de service (NHTSA) ====================
+   Comunicarile producatorilor catre dealeri: problema cunoscuta + solutia oficiala.
+   Publice si gratuite din 2015, in urma unui mandat al Congresului SUA.
+   Set de date: data.transportation.gov (Socrata). Acopera piata americana. */
+const TSB_API = 'https://data.transportation.gov/resource/hczg-qbhf.json';
+
+function tsbField(row, names){
+  for(var i=0;i<names.length;i++){
+    var k = names[i];
+    if(row[k] !== undefined && String(row[k]).trim() !== '') return String(row[k]);
+    var lk = k.toLowerCase();
+    if(row[lk] !== undefined && String(row[lk]).trim() !== '') return String(row[lk]);
+  }
+  return '';
+}
+
+async function loadTSB(make, model, year){
+  var box = $('tsbOut');
+  if(!box) return;
+  if(!make){
+    box.innerHTML = '<div class="note warn">Alege întâi un vehicul sau decodează un VIN.</div>';
+    return;
+  }
+  box.innerHTML = '<div class="console"><div>&gt; Se caută buletine tehnice…</div></div>';
+
+  var where = "upper(maketxt) like '%" + String(make).toUpperCase().replace(/'/g,'') + "%'";
+  if(model) where += " AND upper(modeltxt) like '%" + String(model).toUpperCase().replace(/'/g,'') + "%'";
+  if(year)  where += " AND yeartxt = '" + String(year).replace(/[^0-9]/g,'') + "'";
+  var url = TSB_API + '?$limit=40&$where=' + encodeURIComponent(where);
+
+  try{
+    var rows = await netFetch(url, 20000);
+    if(!Array.isArray(rows) || !rows.length){
+      box.innerHTML = '<div class="note info"><b>Niciun buletin găsit</b> pentru ' +
+        esc([make, model, year].filter(Boolean).join(' ')) + ' în baza NHTSA.<br><br>' +
+        'Baza acoperă vehiculele vândute în SUA. Pentru un model european, caută direct la ' +
+        'reprezentanța mărcii — buletinele tehnice europene nu sunt centralizate public.' +
+        tsbLinkBlock() + '</div>';
+      return;
+    }
+    box.innerHTML =
+      '<div class="sec-label">Buletine tehnice · ' + rows.length + '</div>' +
+      '<div class="note info">Acestea sunt <b>comunicările producătorului către dealeri</b>: descriu o problemă ' +
+      'cunoscută și soluția oficială. Un cod de eroare generic poate ascunde exact un asemenea buletin. ' +
+      'Nu sunt rechemări — reparația nu e neapărat gratuită, dar existența buletinului e un argument solid la service.</div>' +
+      rows.slice(0,25).map(function(r,i){
+        var id = 'tsb'+i;
+        var sum = tsbField(r, ['summary','SUMMARY','desc','tsb_text']);
+        var comp = tsbField(r, ['compname','COMPNAME','component']);
+        var bul = tsbField(r, ['bulno','BULNO','tsb_number','nhtsa_id']);
+        var dt = tsbField(r, ['datea','DATEA','date','bul_date']).slice(0,10);
+        var veh = [tsbField(r,['yeartxt','YEARTXT']), tsbField(r,['maketxt','MAKETXT']), tsbField(r,['modeltxt','MODELTXT'])].filter(Boolean).join(' ');
+        return '<div class="xc amber" id="' + id + '">' +
+          '<button class="xc-head" onclick="tog(' + JSON.stringify(id).replace(/"/g,'&quot;') + ')">' +
+          '<span class="xh-main"><span class="chev">▸</span><span>' +
+          '<span class="xh-t">' + esc(comp || 'Buletin tehnic') + '</span>' +
+          '<span class="xh-s">' + esc([bul, dt, veh].filter(Boolean).join(' · ')) + '</span></span></span>' +
+          '<span class="badge amber">TSB</span></button>' +
+          '<div class="xc-body">' +
+          (sum ? '<div class="blk"><p>' + esc(sum) + '</p></div>'
+               : '<div class="blk"><p style="color:var(--text-dim)">Rezumatul nu este disponibil în setul de date. ' +
+                 'Buletinul complet se poate consulta pe site-ul NHTSA după numărul de mai sus.</p></div>') +
+          '</div></div>';
+      }).join('') +
+      '<div class="hintline">Sursă: NHTSA / Departamentul Transporturilor al SUA — date publice. ' +
+      'Rezumate, nu buletine integrale.</div>' + tsbLinkBlock();
+  }catch(e){
+    box.innerHTML = '<div class="note warn"><b>Setul de date NHTSA nu a răspuns.</b> ' +
+      'Serverul poate fi indisponibil, sau fișierul e deschis local și browserul blochează cererea.' +
+      tsbLinkBlock() + '</div>';
+  }
+}
+
+function tsbLinkBlock(){
+  return '<div class="blk" style="margin-top:12px"><div class="blk-l ok">Calea garantată</div>' +
+    '<p>Pe <b>nhtsa.gov/recalls</b> → fila <i>Vehicle</i> → introdu an, marcă, model → secțiunea ' +
+    '<b>Manufacturer Communications</b>. Acolo găsești buletinele complete, în PDF, gratuit.</p>' +
+    '<a class="btn ghost sm" style="text-decoration:none;margin-top:8px" target="_blank" rel="noopener" ' +
+    'href="https://www.nhtsa.gov/recalls">Deschide NHTSA →</a></div>';
+}
+
+function goTSB(){
+  go('tsb');
+  var mk='', mo='', yr='';
+  if(VEH.make){
+    mk = VEH.make.split(/[ \/]/)[0].replace(/[^A-Za-z-]/g,'');
+    mo = VEH.model.split(/[ \/]/)[0].replace(/[^A-Za-z0-9-]/g,'');
+    var m = (VEH.gen||'').match(/(19|20)[0-9]{2}/);
+    yr = m ? m[0] : '';
+  }
+  $('tsbMake').value = mk; $('tsbModel').value = mo; $('tsbYear').value = yr;
+  if(mk) loadTSB(mk, mo, yr);
+}
+function runTSB(){
+  loadTSB($('tsbMake').value.trim(), $('tsbModel').value.trim(), $('tsbYear').value.trim());
+}
+
+/* ---- geocodare inversa: arata unde te afli, dupa GPS ---- */
+async function reverseGeo(lat, lon){
+  try{
+    var d = await netFetch('https://nominatim.openstreetmap.org/reverse?lat=' + lat + '&lon=' + lon +
+                           '&format=json&zoom=14&addressdetails=1', 10000);
+    if(d && d.address){
+      var a = d.address;
+      return [a.city || a.town || a.village || a.municipality, a.county, a.country].filter(Boolean).join(', ');
+    }
+    if(d && d.display_name) return String(d.display_name).split(',').slice(0,3).join(',');
+  }catch(e){}
+  return null;
+}
+
 /* ==================== ANALIZOR DTC ==================== */
 var lastAnalysis = null;
 
@@ -6996,7 +7524,12 @@ function runAnalysis(){
     '<div class="vc-stat ' + (mod ? 'amber' : 'green') + '"><b>' + mod + '</b><span>moderate</span></div>' +
     '<div class="vc-stat"><b>' + known.length + '</b><span>recunoscute</span></div></div>' +
     (unknown.length ? '<div class="hintline" style="margin:10px 0 0">Neidentificate în bază: ' + unknown.join(', ') +
-      ' — probabil coduri specifice producătorului.</div>' : '') + '</div>';
+      '</div>' : '') + '</div>';
+
+  if(unknown.length){
+    html += '<div class="sec-label">Coduri neidentificate — ce se poate deduce</div>' +
+      unknown.map(function(u){ return structureCard(u); }).join('');
+  }
 
   if(hits.length){
     html += '<div class="sec-label">Interpretarea combinației</div>';
@@ -7350,8 +7883,14 @@ function renderLinks(){
       'perioade de fabricație. Gratuit de consultat pe site. API-ul lor este comercial, iar termenii interzic ' +
       'extragerea automată — de aceea aici e doar o legătură, nu o copie a datelor.') +
     '<div class="sec-label">Rechemări și siguranță</div>' +
+    linkRow('TÜV Report — statistici de fiabilitate', 'https://www.tuev-nord.de/en/knowledge/advice-and-tips-mobility/tuev-report/',
+      'Rate de defecte pe model și grupă de vârstă, din milioane de inspecții tehnice anuale. Cel mai bun indicator public al stării tehnice reale pe flota europeană.') +
+    linkRow('KBA — baza de rechemări (Germania)', 'https://www.kba.de/EN/Themen_en/Marktueberwachung_en/Rueckrufe_en/rueckrufe_node_en.html',
+      'Autoritatea germană de omologare. Rechemări cu marcă, model, defect și remediu, exportabile în CSV sau Excel. Relevant mai ales dacă mașina a fost înmatriculată prima dată în Germania.') +
     linkRow('EU Safety Gate', 'https://ec.europa.eu/rapex',
       'Rechemările oficiale din 31 de țări europene. Caută după numărul de omologare din câmpul K al talonului.') +
+    linkRow('NHTSA — buletine tehnice (TSB)', 'https://www.nhtsa.gov/recalls',
+      'Fila Vehicle → Manufacturer Communications. Comunicările producătorilor către dealeri: problemă cunoscută + soluția oficială. Gratuit, în PDF.') +
     linkRow('NHTSA (SUA)', 'https://www.nhtsa.gov/recalls',
       'Rechemări americane. Deja integrat în ecranul VIN, cu căutare automată.') +
     '<div class="sec-label">Date deschise</div>' +
@@ -7431,8 +7970,10 @@ function poiByGps(){
     return;
   }
   $('poiOut').innerHTML = '<div class="console"><div>&gt; Se cere poziția…</div></div>';
-  navigator.geolocation.getCurrentPosition(function(p){
+  navigator.geolocation.getCurrentPosition(async function(p){
     poiPos = {lat:p.coords.latitude, lon:p.coords.longitude, name:'poziția ta'};
+    var loc = await reverseGeo(p.coords.latitude, p.coords.longitude);
+    if(loc) poiPos.name = loc;
     runPoi();
   }, function(){
     $('poiOut').innerHTML = '<div class="note warn"><b>Localizarea nu este disponibilă.</b> ' +
@@ -7529,7 +8070,7 @@ async function shareApp(){
 
 function renderMore(){
   if($('probCount')) $('probCount').textContent = ISSUES_DB.length+' defecte documentate pe model și motorizare';
-  if($('footTxt')) $('footTxt').innerHTML = 'AUTODIAG PRO · v21.0<br>'+OBD_ALL.length+' coduri · '+ISSUES_DB.length+' probleme · '+PLAYBOOK_DB.length+' ghiduri<br>'+
+  if($('footTxt')) $('footTxt').innerHTML = 'AUTODIAG PRO · v30.0<br>'+OBD_ALL.length+' coduri · '+ISSUES_DB.length+' probleme · '+PLAYBOOK_DB.length+' ghiduri<br>'+
     VEHICLE_DB.length+' mărci · '+VEHICLE_DB.reduce(function(a,b){return a+b.models.length;},0)+' modele';
   sGet('profiles').then(function(l){ if($('moreProf')) $('moreProf').textContent = (l&&l.length?l.length:'0')+' profiluri salvate'; });
 }
